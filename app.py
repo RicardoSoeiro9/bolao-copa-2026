@@ -129,6 +129,29 @@ h1, h2, h3 { font-family: 'Archivo Black', sans-serif !important; }
 .grp-row .gpts { font-weight: 800; color: #f5d34c; width: 26px; text-align: right; }
 .grp-row .gjsg { color: #8fae9c; font-size: .76rem; width: 86px; text-align: right; }
 .grp-leg { color: #8fae9c; font-size: .74rem; margin: 4px 0 14px; }
+
+/* Tabela de palpites do participante */
+.pg-tabela { width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; margin-top: 6px; }
+.pg-tabela th { text-align: left; color: #9fd8b4; font-size: .68rem; text-transform: uppercase;
+    letter-spacing: 1px; padding: 7px 9px; border-bottom: 1px solid rgba(255,255,255,.14); }
+.pg-tabela th.c, .pg-tabela td.c { text-align: center; }
+.pg-tabela td { padding: 8px 9px; border-bottom: 1px solid rgba(255,255,255,.06); color: #e8efe9; font-size: .9rem; }
+.pg-tabela tr:hover td { background: rgba(255,255,255,.04); }
+.pg-data { color: #8fae9c; font-size: .78rem; white-space: nowrap; }
+.pg-jogo { color: #fff; }
+.pg-pal { font-weight: 700; color: #cdd6d0; }
+.pg-real { font-weight: 800; color: #f5d34c; }
+.pg-pts { font-family: 'Archivo Black', sans-serif; color: #f5d34c; text-align: center; }
+.pg-badge { padding: 2px 8px; border-radius: 999px; font-size: .7rem; font-weight: 800; white-space: nowrap; }
+.pg-badge.exato { background: rgba(76,175,120,.22); color: #7fe0a6; }
+.pg-badge.venc { background: rgba(159,216,180,.16); color: #9fd8b4; }
+.pg-badge.emp { background: rgba(212,175,55,.18); color: #f5d34c; }
+.pg-badge.errou { background: rgba(255,82,82,.16); color: #ff8a8a; }
+.pg-badge.pend { background: rgba(255,255,255,.08); color: #cdd6d0; }
+.pg-resumo { display: flex; flex-wrap: wrap; gap: 10px; margin: 10px 0 2px; }
+.pg-chip { padding: 6px 12px; border-radius: 999px; font-family: 'Inter', sans-serif; font-size: .82rem;
+    background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.10); color: #e8efe9; }
+.pg-chip b { color: #f5d34c; }
 </style>
 """
 
@@ -327,9 +350,12 @@ def _card_jogo(jogo: pd.Series) -> str:
     else:
         placar = "×"
 
+    info = jogo["grupo"] or ""
+    if hora_txt:
+        info = f"{info} · 🕒 {hora_txt}" if info else f"🕒 {hora_txt}"
     return f"""
     <div class="jogo-card{' aovivo' if ao_vivo else ''}">
-        <div class="topo"><span>{jogo['grupo'] or ''}</span><span>{badge}</span></div>
+        <div class="topo"><span>{info}</span><span>{badge}</span></div>
         <div class="linha">
             <span class="time">{bandeira_html(jogo['casa'])} {jogo['casa']}</span>
             <span class="placar">{placar}</span>
@@ -436,33 +462,48 @@ def render_participante(
         return
 
     tabela = dados.copy()
-    tabela["jogo"] = tabela.apply(lambda j: f"{j['casa']} × {j['fora']}", axis=1)
-    tabela["palpite"] = tabela.apply(
-        lambda j: f"{j['palpite_casa']:.0f} × {j['palpite_fora']:.0f}"
-        if pd.notna(j["palpite_casa"]) and pd.notna(j["palpite_fora"]) else "—",
-        axis=1,
-    )
-    tabela["resultado"] = tabela.apply(
-        lambda j: f"{j['gols_casa']:.0f} × {j['gols_fora']:.0f}"
-        if pd.notna(j["gols_casa"]) and pd.notna(j["gols_fora"]) else "—",
-        axis=1,
-    )
-    rotulos = {
-        "placar_exato": "🎯 Placar exato", "vencedor": "✅ Vencedor",
-        "empate": "🤝 Empate", "errou": "❌ Errou", "pendente": "⏳ Aguardando",
-    }
-    tabela["acerto"] = tabela["tipo"].map(rotulos)
-    tabela["pontos"] = tabela["pontos"].map(lambda v: f"{v:g}")
+    if "data_utc" in tabela.columns:
+        tabela["dt_br"] = pd.to_datetime(tabela["data_utc"], utc=True, errors="coerce") - pd.Timedelta(hours=3)
+    else:
+        tabela["dt_br"] = pd.NaT
+    tabela = tabela.sort_values(["dt_br", "grupo"], na_position="last")
 
-    st.dataframe(
-        tabela[["grupo", "jogo", "palpite", "resultado", "acerto", "pontos"]],
-        width="stretch",
-        hide_index=True,
-        height=42 * len(tabela) + 40,
-        column_config={
-            "grupo": "Grupo", "jogo": "Jogo", "palpite": "Palpite",
-            "resultado": "Resultado", "acerto": "Acerto", "pontos": "Pontos",
-        },
+    tipos = {
+        "placar_exato": ("exato", "🎯 Exato"), "vencedor": ("venc", "✅ Vencedor"),
+        "empate": ("emp", "🤝 Empate"), "errou": ("errou", "❌ Errou"),
+        "pendente": ("pend", "⏳ Aguardando"),
+    }
+    linhas = []
+    for _, j in tabela.iterrows():
+        dt = j["dt_br"]
+        data_txt = dt.strftime("%d/%m %H:%M") if pd.notna(dt) else "—"
+        pal = (
+            f"{j['palpite_casa']:.0f} × {j['palpite_fora']:.0f}"
+            if pd.notna(j["palpite_casa"]) and pd.notna(j["palpite_fora"]) else "—"
+        )
+        real = (
+            f"{j['gols_casa']:.0f} × {j['gols_fora']:.0f}"
+            if pd.notna(j["gols_casa"]) and pd.notna(j["gols_fora"]) else "—"
+        )
+        cls, rotulo = tipos.get(j["tipo"], ("pend", "—"))
+        jogo = (
+            f"{bandeira_html(j['casa'])} {j['casa']} "
+            f"<span style='color:#8fae9c'>×</span> {j['fora']} {bandeira_html(j['fora'])}"
+        )
+        linhas.append(
+            f'<tr><td class="pg-data">{data_txt}</td>'
+            f'<td class="pg-jogo">{jogo}</td>'
+            f'<td class="c pg-pal">{pal}</td>'
+            f'<td class="c pg-real">{real}</td>'
+            f'<td class="c"><span class="pg-badge {cls}">{rotulo}</span></td>'
+            f'<td class="pg-pts">{j["pontos"]:g}</td></tr>'
+        )
+    _html(
+        '<table class="pg-tabela">'
+        '<tr><th>Data</th><th>Jogo</th><th class="c">Palpite</th><th class="c">Real</th>'
+        '<th class="c">Acerto</th><th class="c">Pts</th></tr>'
+        + "".join(linhas)
+        + "</table>"
     )
 
 

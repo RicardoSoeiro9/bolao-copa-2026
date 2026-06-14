@@ -89,13 +89,12 @@ def avaliar_palpites(palpites: pd.DataFrame, jogos_reais: pd.DataFrame) -> pd.Da
     """Cruza palpites com resultados reais (jogo a jogo).
 
     Só pontua jogos com placar disponível (em andamento ou encerrados).
-    Acrescenta colunas: gols_casa, gols_fora, status, pontos, tipo.
+    Acrescenta colunas: gols_casa, gols_fora, status, data_utc, pontos, tipo.
     """
-    avaliado = palpites.merge(
-        jogos_reais[["casa", "fora", "gols_casa", "gols_fora", "status"]],
-        on=["casa", "fora"],
-        how="left",
-    )
+    cols = ["casa", "fora", "gols_casa", "gols_fora", "status"]
+    if "data_utc" in jogos_reais.columns:
+        cols.append("data_utc")
+    avaliado = palpites.merge(jogos_reais[cols], on=["casa", "fora"], how="left")
 
     def _avaliar(row):
         if (
