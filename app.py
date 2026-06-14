@@ -5,7 +5,11 @@ from pathlib import Path
 import pandas as pd
 import requests
 import streamlit as st
-from streamlit_autorefresh import st_autorefresh
+
+try:
+    from streamlit_autorefresh import st_autorefresh
+except Exception:  # pacote ausente ou com build do frontend quebrada
+    st_autorefresh = None
 
 import bolao
 import dados_copa
@@ -404,7 +408,8 @@ def main():
     st.markdown(CSS, unsafe_allow_html=True)
     render_banner()
 
-    st_autorefresh(interval=dados_copa.TTL_SEGUNDOS * 1000, key="atualizacao")
+    if st_autorefresh is not None:
+        st_autorefresh(interval=dados_copa.TTL_SEGUNDOS * 1000, key="atualizacao")
 
     participantes = bolao.carregar_participantes()
     premio_total = VALOR_POR_PARTICIPANTE * len(participantes)
