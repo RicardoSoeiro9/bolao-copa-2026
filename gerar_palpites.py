@@ -655,8 +655,70 @@ def main() -> None:
                 f.write(f"- {grupo} · {jogo_txt} · {lado}\n")
             f.write("\n")
 
+    _gerar_excel_pendentes(pendentes, participantes)
+
     print(f"palpites.csv gerado: {len(linhas)} linhas, {len(PALPITES_POR_FICHA)} ficha(s).")
     print(f"pendentes.md gerado: {len(pendentes)} campo(s) a confirmar.")
+
+
+def _nome_aba(texto: str) -> str:
+    """Sanitiza o nome da aba do Excel (máx 31 chars, sem caracteres proibidos)."""
+    for c in r"[]:*?/\\":
+        texto = texto.replace(c, " ")
+    return texto.strip()[:31] or "Ficha"
+
+
+def _gerar_excel_pendentes(pendentes: list, participantes: dict) -> None:
+    """Gera pendentes.xlsx: uma aba por participante, só com os campos a confirmar."""
+    try:
+        from openpyxl import Workbook
+        from openpyxl.styles import Alignment, Font, PatternFill
+    except ImportError:
+        print("openpyxl não instalado — pulei pendentes.xlsx (pip install openpyxl).")
+        return
+
+    por_ficha: dict[str, list] = {}
+    for ficha, foto, grupo, jogo_txt, lado in pendentes:
+        por_ficha.setdefault(ficha, []).append((foto, grupo, jogo_txt, lado))
+
+    wb = Workbook()
+    wb.remove(wb.active)
+    cabecalho = PatternFill("solid", fgColor="0E3C22")
+    branco = Font(bold=True, color="FFFFFF")
+    usados = set()
+    for ficha in PALPITES_POR_FICHA:
+        itens = por_ficha.get(ficha)
+        if not itens:
+            continue
+        nome = participantes.get(ficha, f"Ficha {ficha}")
+        base = _nome_aba(f"{ficha} {nome}")
+        aba = base
+        i = 1
+        while aba in usados:  # garante unicidade
+            i += 1
+            aba = f"{base[:28]} {i}"
+        usados.add(aba)
+
+        ws = wb.create_sheet(aba)
+        ws["A1"] = f"Ficha {ficha} — {nome}"
+        ws["A1"].font = Font(bold=True, size=12)
+        ws["A2"] = f"Foto: {itens[0][0]}"
+        ws["A2"].font = Font(italic=True, size=9)
+        for col, titulo in enumerate(["Grupo", "Jogo", "Campo a confirmar", "Placar (preencher)"], 1):
+            c = ws.cell(row=4, column=col, value=titulo)
+            c.fill = cabecalho
+            c.font = branco
+        for r, (_, grupo, jogo_txt, lado) in enumerate(itens, start=5):
+            ws.cell(row=r, column=1, value=grupo)
+            ws.cell(row=r, column=2, value=jogo_txt)
+            ws.cell(row=r, column=3, value=lado)
+            ws.cell(row=r, column=4, value="")  # a preencher
+        for col, larg in {"A": 12, "B": 26, "C": 26, "D": 18}.items():
+            ws.column_dimensions[col].width = larg
+        ws.freeze_panes = "A5"
+
+    wb.save(PASTA / "pendentes.xlsx")
+    print(f"pendentes.xlsx gerado: {len(wb.sheetnames)} aba(s).")
 
 
 if __name__ == "__main__":

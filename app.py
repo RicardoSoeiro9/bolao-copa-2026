@@ -97,6 +97,38 @@ h1, h2, h3 { font-family: 'Archivo Black', sans-serif !important; }
     letter-spacing: 1px; text-transform: uppercase; }
 .final-card .palpite { color: #fff; font-weight: 800; font-size: 1.05rem; margin-top: 4px; }
 .final-card .ganho { color: #f5d34c; font-weight: 700; font-size: .8rem; margin-top: 2px; }
+
+/* Tabela de ranking */
+.rank-tabela { width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; margin-top: 6px; }
+.rank-tabela th { text-align: left; color: #9fd8b4; font-size: .7rem; text-transform: uppercase;
+    letter-spacing: 1px; padding: 8px 10px; border-bottom: 1px solid rgba(255,255,255,.14); }
+.rank-tabela th.num, .rank-tabela td.num { text-align: center; }
+.rank-tabela td { padding: 9px 10px; border-bottom: 1px solid rgba(255,255,255,.06); color: #e8efe9; font-size: .92rem; }
+.rank-tabela tr:hover td { background: rgba(255,255,255,.04); }
+.rank-pos { font-family: 'Archivo Black', sans-serif; color: #9fd8b4; text-align: center; width: 46px; }
+.rank-nome { font-weight: 700; color: #fff; }
+.rank-premio { color: #9fd8b4; font-weight: 600; font-size: .75rem; }
+.rank-total { font-family: 'Archivo Black', sans-serif; color: #f5d34c; font-size: 1.15rem; text-align: center; }
+.rank-tabela tr.ouro td { background: rgba(212,175,55,.12); }
+.rank-tabela tr.prata td { background: rgba(184,188,196,.10); }
+.rank-tabela tr.bronze td { background: rgba(176,124,79,.12); }
+
+/* Cards de classificação dos grupos */
+.grp-wrap { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 6px; }
+.grp-card { flex: 1 1 290px; max-width: 360px; padding: 12px 14px; border-radius: 14px;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(160deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+    border: 1px solid rgba(255,255,255,.10); }
+.grp-card .gh { margin: 0 0 8px; color: #f5d34c; font-family: 'Archivo Black', sans-serif;
+    font-size: .95rem; letter-spacing: 1px; }
+.grp-row { display: flex; align-items: center; gap: 8px; padding: 5px 6px; border-radius: 8px;
+    font-size: .9rem; color: #e8efe9; }
+.grp-row.q { background: rgba(76,175,120,.14); }
+.grp-row .gpos { width: 16px; color: #8fae9c; font-weight: 700; text-align: center; }
+.grp-row .gtime { flex: 1; color: #fff; }
+.grp-row .gpts { font-weight: 800; color: #f5d34c; width: 26px; text-align: right; }
+.grp-row .gjsg { color: #8fae9c; font-size: .76rem; width: 86px; text-align: right; }
+.grp-leg { color: #8fae9c; font-size: .74rem; margin: 4px 0 14px; }
 </style>
 """
 
@@ -192,27 +224,37 @@ def render_podio(ranking: pd.DataFrame, premios: dict):
 def render_ranking(ranking: pd.DataFrame, premios: dict):
     render_podio(ranking, premios)
 
-    tabela = ranking.copy()
-    tabela["pontos"] = tabela["pontos"].map(lambda v: f"{v:g}")
-    tabela["pontos_jogo"] = tabela["pontos_jogo"].map(lambda v: f"{v:g}")
-    tabela["pontos_final"] = tabela["pontos_final"].map(lambda v: f"{v:g}")
-    st.dataframe(
-        tabela[
-            ["posicao", "participante", "pontos", "pontos_jogo", "pontos_final", "pe", "ven", "emp"]
-        ],
-        width="stretch",
-        hide_index=True,
-        height=42 * len(tabela) + 40,
-        column_config={
-            "posicao": st.column_config.NumberColumn("#", width="small"),
-            "participante": "Participante",
-            "pontos": st.column_config.TextColumn("Total"),
-            "pontos_jogo": st.column_config.TextColumn("Jogos"),
-            "pontos_final": st.column_config.TextColumn("Finais"),
-            "pe": st.column_config.NumberColumn("Placar exato", help="Desempate 1"),
-            "ven": st.column_config.NumberColumn("Vencedor"),
-            "emp": st.column_config.NumberColumn("Empate"),
-        },
+    medalhas = {1: "🥇", 2: "🥈", 3: "🥉"}
+    classes = {1: "ouro", 2: "prata", 3: "bronze"}
+    linhas = []
+    for _, r in ranking.iterrows():
+        pos = int(r["posicao"])
+        cls = classes.get(pos, "")
+        marca = medalhas.get(pos, str(pos))
+        premio = (
+            f'<div class="rank-premio">R$ {premios[pos]:g}</div>' if pos in premios else ""
+        )
+        linhas.append(
+            f"""
+            <tr class="{cls}">
+                <td class="rank-pos">{marca}</td>
+                <td><span class="rank-nome">{r['participante']}</span>{premio}</td>
+                <td class="rank-total">{r['pontos']:g}</td>
+                <td class="num">{r['pontos_jogo']:g}</td>
+                <td class="num">{r['pontos_final']:g}</td>
+                <td class="num">{int(r['pe'])}</td>
+                <td class="num">{int(r['ven'])}</td>
+                <td class="num">{int(r['emp'])}</td>
+            </tr>
+            """
+        )
+    _html(
+        '<table class="rank-tabela">'
+        '<tr><th class="num">#</th><th>Participante</th><th class="num">Pontos</th>'
+        '<th class="num">Jogos</th><th class="num">Finais</th>'
+        '<th class="num">🎯 Exato</th><th class="num">✅ Venc.</th><th class="num">🤝 Emp.</th></tr>'
+        + "".join(linhas)
+        + "</table>"
     )
 
 
@@ -286,21 +328,25 @@ def render_grupos():
         st.info("A API ainda não retornou a classificação dos grupos.")
         return
 
-    grupos = sorted(classificacao["grupo"].unique())
-    colunas = st.columns(3)
-    for i, grupo in enumerate(grupos):
-        with colunas[i % 3]:
-            st.markdown(f"**{grupo}**")
-            tabela = classificacao[classificacao["grupo"] == grupo].copy()
-            st.dataframe(
-                tabela[["posicao", "time", "pontos", "jogos", "saldo"]],
-                width="stretch",
-                hide_index=True,
-                column_config={
-                    "posicao": "#", "time": "Seleção", "pontos": "P",
-                    "jogos": "J", "saldo": "SG",
-                },
+    st.caption("As duas primeiras seleções de cada grupo (destacadas) avançam.")
+    cards = []
+    for grupo in sorted(classificacao["grupo"].unique()):
+        tabela = classificacao[classificacao["grupo"] == grupo].sort_values("posicao")
+        linhas = []
+        for _, t in tabela.iterrows():
+            pos = int(t["posicao"]) if pd.notna(t["posicao"]) else 0
+            q = " q" if pos and pos <= 2 else ""
+            linhas.append(
+                f'<div class="grp-row{q}"><span class="gpos">{pos}</span>'
+                f'<span class="gtime">{bandeira_html(t["time"])} {t["time"]}</span>'
+                f'<span class="gpts">{int(t["pontos"]) if pd.notna(t["pontos"]) else 0}</span>'
+                f'<span class="gjsg">J{int(t["jogos"]) if pd.notna(t["jogos"]) else 0} · '
+                f'SG {int(t["saldo"]) if pd.notna(t["saldo"]) else 0}</span></div>'
             )
+        cards.append(
+            f'<div class="grp-card"><div class="gh">{grupo}</div>{"".join(linhas)}</div>'
+        )
+    _html(f'<div class="grp-wrap">{"".join(cards)}</div>')
 
 
 _ROTULOS_FINAIS = [
