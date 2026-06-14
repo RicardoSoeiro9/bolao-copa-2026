@@ -1,6 +1,6 @@
 # Campos a confirmar (placares ilegíveis nas fotos)
 
-Total de campos pendentes: **45**
+Total de campos pendentes: **54**
 
 ## Ficha 05 — Samela Mendes
 Foto: `WhatsApp Image 2026-06-13 at 17.46.59 (1).jpeg`
@@ -58,4 +58,17 @@ Foto: `WhatsApp Image 2026-06-13 at 17.47.00 (3).jpeg`
 
 - Grupo L · Colômbia x Portugal · placar de Colômbia
 - Grupo L · Colômbia x Portugal · placar de Portugal
+
+## Ficha 34 — Adams Barbosa (Expedicao)
+Foto: `WhatsApp Image 2026-06-13 at 17.47.08 (2).jpeg`
+
+- Grupo D · Paraguai x Austrália · placar de Paraguai
+- Grupo D · Paraguai x Austrália · placar de Austrália
+- Grupo D · Turquia x EUA · placar de Turquia
+- Grupo D · Turquia x EUA · placar de EUA
+- Grupo H · Arábia Saudita x Uruguai · placar de Arábia Saudita
+- Grupo H · Arábia Saudita x Uruguai · placar de Uruguai
+- Grupo H · Cabo Verde x Arábia Saudita · placar de Arábia Saudita
+- Grupo H · Uruguai x Espanha · placar de Uruguai
+- Grupo H · Uruguai x Espanha · placar de Espanha
 

@@ -2303,3 +2303,75 @@ ficha,participante,grupo,casa,fora,palpite_casa,palpite_fora
 33,Antonio Fernandes (Almoxarifado),Grupo M,Panamá,Croácia,1,1
 33,Antonio Fernandes (Almoxarifado),Grupo M,Croácia,Gana,1,1
 33,Antonio Fernandes (Almoxarifado),Grupo M,Panamá,Inglaterra,1,4
+34,Adams Barbosa (Expedicao),Grupo A,México,África do Sul,2,1
+34,Adams Barbosa (Expedicao),Grupo A,Coreia do Sul,Rep. Checa,1,1
+34,Adams Barbosa (Expedicao),Grupo A,Rep. Checa,África do Sul,1,1
+34,Adams Barbosa (Expedicao),Grupo A,México,Coreia do Sul,2,1
+34,Adams Barbosa (Expedicao),Grupo A,África do Sul,Coreia do Sul,1,1
+34,Adams Barbosa (Expedicao),Grupo A,Rep. Checa,México,1,2
+34,Adams Barbosa (Expedicao),Grupo B,Canadá,Bósnia e Herzeg.,2,0
+34,Adams Barbosa (Expedicao),Grupo B,Catar,Suiça,1,1
+34,Adams Barbosa (Expedicao),Grupo B,Suiça,Bósnia e Herzeg.,3,0
+34,Adams Barbosa (Expedicao),Grupo B,Canadá,Catar,3,0
+34,Adams Barbosa (Expedicao),Grupo B,Bósnia e Herzeg.,Catar,2,1
+34,Adams Barbosa (Expedicao),Grupo B,Suiça,Canadá,3,2
+34,Adams Barbosa (Expedicao),Grupo C,Brasil,Marrocos,2,0
+34,Adams Barbosa (Expedicao),Grupo C,Haiti,Escócia,1,1
+34,Adams Barbosa (Expedicao),Grupo C,Escócia,Marrocos,1,2
+34,Adams Barbosa (Expedicao),Grupo C,Brasil,Haiti,3,0
+34,Adams Barbosa (Expedicao),Grupo C,Marrocos,Haiti,2,1
+34,Adams Barbosa (Expedicao),Grupo C,Escócia,Brasil,1,3
+34,Adams Barbosa (Expedicao),Grupo D,EUA,Paraguai,2,1
+34,Adams Barbosa (Expedicao),Grupo D,Austrália,Turquia,2,2
+34,Adams Barbosa (Expedicao),Grupo D,EUA,Austrália,2,1
+34,Adams Barbosa (Expedicao),Grupo D,Turquia,Paraguai,2,1
+34,Adams Barbosa (Expedicao),Grupo D,Paraguai,Austrália,,
+34,Adams Barbosa (Expedicao),Grupo D,Turquia,EUA,,
+34,Adams Barbosa (Expedicao),Grupo E,Alemanha,Curaçao,4,1
+34,Adams Barbosa (Expedicao),Grupo E,Costa do Marfim,Equador,2,1
+34,Adams Barbosa (Expedicao),Grupo E,Alemanha,Costa do Marfim,2,1
+34,Adams Barbosa (Expedicao),Grupo E,Equador,Curaçao,2,0
+34,Adams Barbosa (Expedicao),Grupo E,Curaçao,Costa do Marfim,0,2
+34,Adams Barbosa (Expedicao),Grupo E,Equador,Alemanha,0,2
+34,Adams Barbosa (Expedicao),Grupo F,Holanda,Japão,2,2
+34,Adams Barbosa (Expedicao),Grupo F,Suécia,Tunísia,1,1
+34,Adams Barbosa (Expedicao),Grupo F,Holanda,Suécia,1,0
+34,Adams Barbosa (Expedicao),Grupo F,Tunísia,Japão,0,1
+34,Adams Barbosa (Expedicao),Grupo F,Japão,Suécia,0,1
+34,Adams Barbosa (Expedicao),Grupo F,Tunísia,Holanda,1,1
+34,Adams Barbosa (Expedicao),Grupo G,Bélgica,Egito,2,1
+34,Adams Barbosa (Expedicao),Grupo G,Irã,Nova Zelandia,2,0
+34,Adams Barbosa (Expedicao),Grupo G,Bélgica,Irã,3,0
+34,Adams Barbosa (Expedicao),Grupo G,Nova Zelandia,Egito,1,1
+34,Adams Barbosa (Expedicao),Grupo G,Egito,Irã,1,1
+34,Adams Barbosa (Expedicao),Grupo G,Nova Zelandia,Bélgica,0,2
+34,Adams Barbosa (Expedicao),Grupo H,Espanha,Cabo Verde,4,0
+34,Adams Barbosa (Expedicao),Grupo H,Arábia Saudita,Uruguai,,
+34,Adams Barbosa (Expedicao),Grupo H,Espanha,Arábia Saudita,2,1
+34,Adams Barbosa (Expedicao),Grupo H,Uruguai,Cabo Verde,2,0
+34,Adams Barbosa (Expedicao),Grupo H,Cabo Verde,Arábia Saudita,0,
+34,Adams Barbosa (Expedicao),Grupo H,Uruguai,Espanha,,
+34,Adams Barbosa (Expedicao),Grupo I,França,Senegal,2,1
+34,Adams Barbosa (Expedicao),Grupo I,Iraque,Noruega,1,1
+34,Adams Barbosa (Expedicao),Grupo I,França,Iraque,3,1
+34,Adams Barbosa (Expedicao),Grupo I,Noruega,Senegal,2,0
+34,Adams Barbosa (Expedicao),Grupo I,Senegal,Iraque,3,1
+34,Adams Barbosa (Expedicao),Grupo I,Noruega,França,1,2
+34,Adams Barbosa (Expedicao),Grupo J,Argentina,Argélia,3,0
+34,Adams Barbosa (Expedicao),Grupo J,Austria,Jordânia,1,1
+34,Adams Barbosa (Expedicao),Grupo J,Argentina,Austria,2,1
+34,Adams Barbosa (Expedicao),Grupo J,Jordânia,Argélia,1,2
+34,Adams Barbosa (Expedicao),Grupo J,Argélia,Austria,1,3
+34,Adams Barbosa (Expedicao),Grupo J,Jordânia,Argentina,0,3
+34,Adams Barbosa (Expedicao),Grupo L,Portugal,Congo DR,2,0
+34,Adams Barbosa (Expedicao),Grupo L,Uzbequistão,Colômbia,0,2
+34,Adams Barbosa (Expedicao),Grupo L,Portugal,Uzbequistão,2,0
+34,Adams Barbosa (Expedicao),Grupo L,Colômbia,Congo DR,3,0
+34,Adams Barbosa (Expedicao),Grupo L,Congo DR,Uzbequistão,1,2
+34,Adams Barbosa (Expedicao),Grupo L,Colômbia,Portugal,1,2
+34,Adams Barbosa (Expedicao),Grupo M,Inglaterra,Croácia,2,1
+34,Adams Barbosa (Expedicao),Grupo M,Gana,Panamá,1,1
+34,Adams Barbosa (Expedicao),Grupo M,Inglaterra,Gana,3,1
+34,Adams Barbosa (Expedicao),Grupo M,Panamá,Croácia,1,2
+34,Adams Barbosa (Expedicao),Grupo M,Croácia,Gana,2,1
+34,Adams Barbosa (Expedicao),Grupo M,Panamá,Inglaterra,0,3
