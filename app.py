@@ -410,6 +410,13 @@ def main():
 
     if st_autorefresh is not None:
         st_autorefresh(interval=dados_copa.TTL_SEGUNDOS * 1000, key="atualizacao")
+    else:
+        # Fallback sem dependência: recarrega a página sozinho a cada TTL segundos.
+        st.components.v1.html(
+            f"<script>setTimeout(() => window.parent.location.reload(), "
+            f"{dados_copa.TTL_SEGUNDOS * 1000});</script>",
+            height=0,
+        )
 
     participantes = bolao.carregar_participantes()
     premio_total = VALOR_POR_PARTICIPANTE * len(participantes)
