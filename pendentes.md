@@ -1,6 +1,6 @@
 # Campos a confirmar (placares ilegíveis nas fotos)
 
-Total de campos pendentes: **43**
+Total de campos pendentes: **45**
 
 ## Ficha 05 — Samela Mendes
 Foto: `WhatsApp Image 2026-06-13 at 17.46.59 (1).jpeg`
@@ -52,4 +52,10 @@ Foto: `WhatsApp Image 2026-06-13 at 17.46.59.jpeg`
 - Grupo B · Suiça x Canadá · placar de Canadá
 - Grupo G · Nova Zelandia x Bélgica · placar de Nova Zelandia
 - Grupo G · Nova Zelandia x Bélgica · placar de Bélgica
+
+## Ficha 09 — Marco Pinheiro (Engenharia)
+Foto: `WhatsApp Image 2026-06-13 at 17.47.00 (3).jpeg`
+
+- Grupo L · Colômbia x Portugal · placar de Colômbia
+- Grupo L · Colômbia x Portugal · placar de Portugal
 
