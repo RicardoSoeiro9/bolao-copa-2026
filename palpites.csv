@@ -791,3 +791,147 @@ ficha,participante,grupo,casa,fora,palpite_casa,palpite_fora
 11,Juliana (Logistica),Grupo M,Panamá,Croácia,0,2
 11,Juliana (Logistica),Grupo M,Croácia,Gana,2,0
 11,Juliana (Logistica),Grupo M,Panamá,Inglaterra,0,2
+12,Juarez Marques,Grupo A,México,África do Sul,2,1
+12,Juarez Marques,Grupo A,Coreia do Sul,Rep. Checa,0,1
+12,Juarez Marques,Grupo A,Rep. Checa,África do Sul,2,1
+12,Juarez Marques,Grupo A,México,Coreia do Sul,2,0
+12,Juarez Marques,Grupo A,África do Sul,Coreia do Sul,1,2
+12,Juarez Marques,Grupo A,Rep. Checa,México,1,1
+12,Juarez Marques,Grupo B,Canadá,Bósnia e Herzeg.,2,1
+12,Juarez Marques,Grupo B,Catar,Suiça,0,2
+12,Juarez Marques,Grupo B,Suiça,Bósnia e Herzeg.,2,1
+12,Juarez Marques,Grupo B,Canadá,Catar,3,1
+12,Juarez Marques,Grupo B,Bósnia e Herzeg.,Catar,2,0
+12,Juarez Marques,Grupo B,Suiça,Canadá,1,0
+12,Juarez Marques,Grupo C,Brasil,Marrocos,2,1
+12,Juarez Marques,Grupo C,Haiti,Escócia,1,3
+12,Juarez Marques,Grupo C,Escócia,Marrocos,1,2
+12,Juarez Marques,Grupo C,Brasil,Haiti,5,0
+12,Juarez Marques,Grupo C,Marrocos,Haiti,3,1
+12,Juarez Marques,Grupo C,Escócia,Brasil,1,3
+12,Juarez Marques,Grupo D,EUA,Paraguai,2,1
+12,Juarez Marques,Grupo D,Austrália,Turquia,0,2
+12,Juarez Marques,Grupo D,EUA,Austrália,2,0
+12,Juarez Marques,Grupo D,Turquia,Paraguai,1,1
+12,Juarez Marques,Grupo D,Paraguai,Austrália,2,1
+12,Juarez Marques,Grupo D,Turquia,EUA,2,2
+12,Juarez Marques,Grupo E,Alemanha,Curaçao,5,0
+12,Juarez Marques,Grupo E,Costa do Marfim,Equador,1,2
+12,Juarez Marques,Grupo E,Alemanha,Costa do Marfim,1,0
+12,Juarez Marques,Grupo E,Equador,Curaçao,3,1
+12,Juarez Marques,Grupo E,Curaçao,Costa do Marfim,0,2
+12,Juarez Marques,Grupo E,Equador,Alemanha,1,1
+12,Juarez Marques,Grupo F,Holanda,Japão,1,0
+12,Juarez Marques,Grupo F,Suécia,Tunísia,2,1
+12,Juarez Marques,Grupo F,Holanda,Suécia,0,0
+12,Juarez Marques,Grupo F,Tunísia,Japão,1,2
+12,Juarez Marques,Grupo F,Japão,Suécia,2,2
+12,Juarez Marques,Grupo F,Tunísia,Holanda,1,3
+12,Juarez Marques,Grupo G,Bélgica,Egito,2,1
+12,Juarez Marques,Grupo G,Irã,Nova Zelandia,2,0
+12,Juarez Marques,Grupo G,Bélgica,Irã,1,0
+12,Juarez Marques,Grupo G,Nova Zelandia,Egito,1,2
+12,Juarez Marques,Grupo G,Egito,Irã,1,3
+12,Juarez Marques,Grupo G,Nova Zelandia,Bélgica,0,3
+12,Juarez Marques,Grupo H,Espanha,Cabo Verde,6,0
+12,Juarez Marques,Grupo H,Arábia Saudita,Uruguai,1,2
+12,Juarez Marques,Grupo H,Espanha,Arábia Saudita,3,0
+12,Juarez Marques,Grupo H,Uruguai,Cabo Verde,3,0
+12,Juarez Marques,Grupo H,Cabo Verde,Arábia Saudita,0,1
+12,Juarez Marques,Grupo H,Uruguai,Espanha,1,3
+12,Juarez Marques,Grupo I,França,Senegal,2,1
+12,Juarez Marques,Grupo I,Iraque,Noruega,1,2
+12,Juarez Marques,Grupo I,França,Iraque,3,1
+12,Juarez Marques,Grupo I,Noruega,Senegal,1,1
+12,Juarez Marques,Grupo I,Senegal,Iraque,3,1
+12,Juarez Marques,Grupo I,Noruega,França,1,2
+12,Juarez Marques,Grupo J,Argentina,Argélia,2,1
+12,Juarez Marques,Grupo J,Austria,Jordânia,1,0
+12,Juarez Marques,Grupo J,Argentina,Austria,1,0
+12,Juarez Marques,Grupo J,Jordânia,Argélia,1,3
+12,Juarez Marques,Grupo J,Argélia,Austria,2,1
+12,Juarez Marques,Grupo J,Jordânia,Argentina,0,4
+12,Juarez Marques,Grupo L,Portugal,Congo DR,4,0
+12,Juarez Marques,Grupo L,Uzbequistão,Colômbia,1,3
+12,Juarez Marques,Grupo L,Portugal,Uzbequistão,2,1
+12,Juarez Marques,Grupo L,Colômbia,Congo DR,2,1
+12,Juarez Marques,Grupo L,Congo DR,Uzbequistão,1,2
+12,Juarez Marques,Grupo L,Colômbia,Portugal,1,1
+12,Juarez Marques,Grupo M,Inglaterra,Croácia,1,1
+12,Juarez Marques,Grupo M,Gana,Panamá,3,2
+12,Juarez Marques,Grupo M,Inglaterra,Gana,1,0
+12,Juarez Marques,Grupo M,Panamá,Croácia,0,2
+12,Juarez Marques,Grupo M,Croácia,Gana,2,1
+12,Juarez Marques,Grupo M,Panamá,Inglaterra,0,3
+13,Josias Silva (Pintura),Grupo A,México,África do Sul,2,1
+13,Josias Silva (Pintura),Grupo A,Coreia do Sul,Rep. Checa,1,1
+13,Josias Silva (Pintura),Grupo A,Rep. Checa,África do Sul,2,1
+13,Josias Silva (Pintura),Grupo A,México,Coreia do Sul,1,0
+13,Josias Silva (Pintura),Grupo A,África do Sul,Coreia do Sul,0,1
+13,Josias Silva (Pintura),Grupo A,Rep. Checa,México,0,2
+13,Josias Silva (Pintura),Grupo B,Canadá,Bósnia e Herzeg.,2,1
+13,Josias Silva (Pintura),Grupo B,Catar,Suiça,0,2
+13,Josias Silva (Pintura),Grupo B,Suiça,Bósnia e Herzeg.,3,1
+13,Josias Silva (Pintura),Grupo B,Canadá,Catar,2,0
+13,Josias Silva (Pintura),Grupo B,Bósnia e Herzeg.,Catar,1,0
+13,Josias Silva (Pintura),Grupo B,Suiça,Canadá,2,2
+13,Josias Silva (Pintura),Grupo C,Brasil,Marrocos,2,1
+13,Josias Silva (Pintura),Grupo C,Haiti,Escócia,0,2
+13,Josias Silva (Pintura),Grupo C,Escócia,Marrocos,1,1
+13,Josias Silva (Pintura),Grupo C,Brasil,Haiti,3,0
+13,Josias Silva (Pintura),Grupo C,Marrocos,Haiti,2,0
+13,Josias Silva (Pintura),Grupo C,Escócia,Brasil,1,2
+13,Josias Silva (Pintura),Grupo D,EUA,Paraguai,2,0
+13,Josias Silva (Pintura),Grupo D,Austrália,Turquia,1,2
+13,Josias Silva (Pintura),Grupo D,EUA,Austrália,2,0
+13,Josias Silva (Pintura),Grupo D,Turquia,Paraguai,2,1
+13,Josias Silva (Pintura),Grupo D,Paraguai,Austrália,1,1
+13,Josias Silva (Pintura),Grupo D,Turquia,EUA,2,2
+13,Josias Silva (Pintura),Grupo E,Alemanha,Curaçao,3,0
+13,Josias Silva (Pintura),Grupo E,Costa do Marfim,Equador,1,0
+13,Josias Silva (Pintura),Grupo E,Alemanha,Costa do Marfim,2,1
+13,Josias Silva (Pintura),Grupo E,Equador,Curaçao,2,0
+13,Josias Silva (Pintura),Grupo E,Curaçao,Costa do Marfim,0,1
+13,Josias Silva (Pintura),Grupo E,Equador,Alemanha,0,2
+13,Josias Silva (Pintura),Grupo F,Holanda,Japão,2,2
+13,Josias Silva (Pintura),Grupo F,Suécia,Tunísia,2,1
+13,Josias Silva (Pintura),Grupo F,Holanda,Suécia,2,1
+13,Josias Silva (Pintura),Grupo F,Tunísia,Japão,0,2
+13,Josias Silva (Pintura),Grupo F,Japão,Suécia,2,1
+13,Josias Silva (Pintura),Grupo F,Tunísia,Holanda,0,2
+13,Josias Silva (Pintura),Grupo G,Bélgica,Egito,2,1
+13,Josias Silva (Pintura),Grupo G,Irã,Nova Zelandia,0,0
+13,Josias Silva (Pintura),Grupo G,Bélgica,Irã,2,0
+13,Josias Silva (Pintura),Grupo G,Nova Zelandia,Egito,1,2
+13,Josias Silva (Pintura),Grupo G,Egito,Irã,2,1
+13,Josias Silva (Pintura),Grupo G,Nova Zelandia,Bélgica,0,2
+13,Josias Silva (Pintura),Grupo H,Espanha,Cabo Verde,3,0
+13,Josias Silva (Pintura),Grupo H,Arábia Saudita,Uruguai,1,2
+13,Josias Silva (Pintura),Grupo H,Espanha,Arábia Saudita,3,1
+13,Josias Silva (Pintura),Grupo H,Uruguai,Cabo Verde,1,0
+13,Josias Silva (Pintura),Grupo H,Cabo Verde,Arábia Saudita,0,1
+13,Josias Silva (Pintura),Grupo H,Uruguai,Espanha,2,3
+13,Josias Silva (Pintura),Grupo I,França,Senegal,3,0
+13,Josias Silva (Pintura),Grupo I,Iraque,Noruega,0,0
+13,Josias Silva (Pintura),Grupo I,França,Iraque,2,0
+13,Josias Silva (Pintura),Grupo I,Noruega,Senegal,1,1
+13,Josias Silva (Pintura),Grupo I,Senegal,Iraque,1,1
+13,Josias Silva (Pintura),Grupo I,Noruega,França,2,3
+13,Josias Silva (Pintura),Grupo J,Argentina,Argélia,2,1
+13,Josias Silva (Pintura),Grupo J,Austria,Jordânia,1,1
+13,Josias Silva (Pintura),Grupo J,Argentina,Austria,3,1
+13,Josias Silva (Pintura),Grupo J,Jordânia,Argélia,1,1
+13,Josias Silva (Pintura),Grupo J,Argélia,Austria,2,1
+13,Josias Silva (Pintura),Grupo J,Jordânia,Argentina,0,2
+13,Josias Silva (Pintura),Grupo L,Portugal,Congo DR,3,0
+13,Josias Silva (Pintura),Grupo L,Uzbequistão,Colômbia,1,2
+13,Josias Silva (Pintura),Grupo L,Portugal,Uzbequistão,3,0
+13,Josias Silva (Pintura),Grupo L,Colômbia,Congo DR,1,0
+13,Josias Silva (Pintura),Grupo L,Congo DR,Uzbequistão,0,1
+13,Josias Silva (Pintura),Grupo L,Colômbia,Portugal,1,2
+13,Josias Silva (Pintura),Grupo M,Inglaterra,Croácia,2,1
+13,Josias Silva (Pintura),Grupo M,Gana,Panamá,1,1
+13,Josias Silva (Pintura),Grupo M,Inglaterra,Gana,2,0
+13,Josias Silva (Pintura),Grupo M,Panamá,Croácia,1,2
+13,Josias Silva (Pintura),Grupo M,Croácia,Gana,2,1
+13,Josias Silva (Pintura),Grupo M,Panamá,Inglaterra,0,2
