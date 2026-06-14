@@ -153,6 +153,7 @@ def carregar_resultados_reais(gabarito: pd.DataFrame) -> tuple[pd.DataFrame, str
     base[["gols_casa", "gols_fora"]] = None
     base["status"] = "SCHEDULED"
     base["minuto"] = None
+    base["data_utc"] = None
 
     chave = dados_copa.obter_api_key()
     if not chave:
@@ -180,13 +181,13 @@ def carregar_resultados_reais(gabarito: pd.DataFrame) -> tuple[pd.DataFrame, str
         j = por_par.get(frozenset({_normalizar(linha["casa"]), _normalizar(linha["fora"])}))
         if j is None:
             return pd.Series({"gols_casa": None, "gols_fora": None,
-                              "status": "SCHEDULED", "minuto": None})
+                              "status": "SCHEDULED", "minuto": None, "data_utc": None})
         mesma_ordem = _normalizar(linha["casa"]) == _normalizar(j["casa"])
         gc, gf = (j["gols_casa"], j["gols_fora"]) if mesma_ordem else (j["gols_fora"], j["gols_casa"])
-        return pd.Series({"gols_casa": gc, "gols_fora": gf,
-                          "status": j["status"], "minuto": j["minuto"]})
+        return pd.Series({"gols_casa": gc, "gols_fora": gf, "status": j["status"],
+                          "minuto": j["minuto"], "data_utc": j.get("data_utc")})
 
-    base[["gols_casa", "gols_fora", "status", "minuto"]] = base.apply(_real, axis=1)
+    base[["gols_casa", "gols_fora", "status", "minuto", "data_utc"]] = base.apply(_real, axis=1)
     return base, None
 
 
@@ -280,22 +281,46 @@ def render_jogos(jogos: pd.DataFrame):
         st.info("Nenhum jogo com esse filtro.")
         return
 
-    for grupo, do_grupo in filtrado.groupby("grupo"):
-        _html(f'<div class="dia-titulo">📍 {grupo}</div>')
-        cards = [_card_jogo(jogo) for _, jogo in do_grupo.iterrows()]
+    # Ordena cronologicamente pela data real (UTC→Brasília); jogos sem data vão ao fim.
+    filtrado = filtrado.copy()
+    filtrado["dt_br"] = (
+        pd.to_datetime(filtrado["data_utc"], utc=True, errors="coerce")
+        - pd.Timedelta(hours=3)
+    )
+    filtrado = filtrado.sort_values("dt_br", na_position="last")
+
+    if filtrado["dt_br"].isna().all():
+        # Sem datas da API (ex.: sem chave) — mostra por grupo.
+        for grupo, do_grupo in filtrado.groupby("grupo"):
+            _html(f'<div class="dia-titulo">📍 {grupo}</div>')
+            cards = [_card_jogo(j) for _, j in do_grupo.iterrows()]
+            _html(f'<div class="jogos-grid">{"".join(cards)}</div>')
+        return
+
+    st.caption("Jogos em ordem cronológica · horário de Brasília.")
+    dias_pt = ["seg", "ter", "qua", "qui", "sex", "sáb", "dom"]
+    for dia, do_dia in filtrado.groupby(filtrado["dt_br"].dt.date, dropna=False):
+        if pd.isna(dia):
+            titulo = "Data a confirmar"
+        else:
+            titulo = f"{dias_pt[dia.weekday()]}, {dia.strftime('%d/%m/%Y')}"
+        _html(f'<div class="dia-titulo">📅 {titulo}</div>')
+        cards = [_card_jogo(j) for _, j in do_dia.iterrows()]
         _html(f'<div class="jogos-grid">{"".join(cards)}</div>')
 
 
 def _card_jogo(jogo: pd.Series) -> str:
     status = jogo.get("status", "SCHEDULED")
     ao_vivo = status in STATUS_AO_VIVO
+    dt = jogo.get("dt_br")
+    hora_txt = dt.strftime("%H:%M") if pd.notna(dt) else ""
     if ao_vivo:
         minuto = f" {jogo['minuto']}'" if pd.notna(jogo.get("minuto")) else ""
         badge = f'<span class="badge live">AO VIVO{minuto}</span>'
     elif status == "FINISHED":
         badge = '<span class="badge fim">ENCERRADO</span>'
     else:
-        badge = '<span class="badge agendado">⏰ agendado</span>'
+        badge = f'<span class="badge agendado">⏰ {hora_txt or "agendado"}</span>'
 
     if pd.notna(jogo.get("gols_casa")) and pd.notna(jogo.get("gols_fora")):
         placar = f"{int(jogo['gols_casa'])} × {int(jogo['gols_fora'])}"

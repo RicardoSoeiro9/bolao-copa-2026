@@ -10,3 +10,6 @@ __pycache__/
 *.pyc
 .venv/
 venv/
+
+# Arquivos temporários do Excel (lock criado ao abrir .xlsx)
+~$*
