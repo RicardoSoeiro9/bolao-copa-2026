@@ -1,0 +1,12 @@
+# Segredos da API (não versionar)
+.streamlit/secrets.toml
+
+# Formulários originais preenchidos à mão — contêm nomes/assinaturas.
+# Repositório é público: não publicar as imagens.
+Formularios/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/

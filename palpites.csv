@@ -1,0 +1,73 @@
+ficha,participante,grupo,casa,fora,palpite_casa,palpite_fora
+01,Assinatura ilegivel (Ficha 01),Grupo A,México,África do Sul,2,0
+01,Assinatura ilegivel (Ficha 01),Grupo A,Coreia do Sul,Rep. Checa,0,1
+01,Assinatura ilegivel (Ficha 01),Grupo A,Rep. Checa,África do Sul,2,0
+01,Assinatura ilegivel (Ficha 01),Grupo A,México,Coreia do Sul,2,1
+01,Assinatura ilegivel (Ficha 01),Grupo A,África do Sul,Coreia do Sul,0,1
+01,Assinatura ilegivel (Ficha 01),Grupo A,Rep. Checa,México,1,1
+01,Assinatura ilegivel (Ficha 01),Grupo B,Canadá,Bósnia e Herzeg.,1,1
+01,Assinatura ilegivel (Ficha 01),Grupo B,Catar,Suiça,0,2
+01,Assinatura ilegivel (Ficha 01),Grupo B,Suiça,Bósnia e Herzeg.,2,1
+01,Assinatura ilegivel (Ficha 01),Grupo B,Canadá,Catar,2,1
+01,Assinatura ilegivel (Ficha 01),Grupo B,Bósnia e Herzeg.,Catar,2,0
+01,Assinatura ilegivel (Ficha 01),Grupo B,Suiça,Canadá,1,1
+01,Assinatura ilegivel (Ficha 01),Grupo C,Brasil,Marrocos,2,1
+01,Assinatura ilegivel (Ficha 01),Grupo C,Haiti,Escócia,0,2
+01,Assinatura ilegivel (Ficha 01),Grupo C,Escócia,Marrocos,1,2
+01,Assinatura ilegivel (Ficha 01),Grupo C,Brasil,Haiti,4,0
+01,Assinatura ilegivel (Ficha 01),Grupo C,Marrocos,Haiti,3,0
+01,Assinatura ilegivel (Ficha 01),Grupo C,Escócia,Brasil,2,2
+01,Assinatura ilegivel (Ficha 01),Grupo D,EUA,Paraguai,0,1
+01,Assinatura ilegivel (Ficha 01),Grupo D,Austrália,Turquia,2,0
+01,Assinatura ilegivel (Ficha 01),Grupo D,EUA,Austrália,0,1
+01,Assinatura ilegivel (Ficha 01),Grupo D,Turquia,Paraguai,0,2
+01,Assinatura ilegivel (Ficha 01),Grupo D,Paraguai,Austrália,1,0
+01,Assinatura ilegivel (Ficha 01),Grupo D,Turquia,EUA,0,0
+01,Assinatura ilegivel (Ficha 01),Grupo E,Alemanha,Curaçao,4,0
+01,Assinatura ilegivel (Ficha 01),Grupo E,Costa do Marfim,Equador,2,1
+01,Assinatura ilegivel (Ficha 01),Grupo E,Alemanha,Costa do Marfim,2,2
+01,Assinatura ilegivel (Ficha 01),Grupo E,Equador,Curaçao,3,0
+01,Assinatura ilegivel (Ficha 01),Grupo E,Curaçao,Costa do Marfim,0,3
+01,Assinatura ilegivel (Ficha 01),Grupo E,Equador,Alemanha,0,3
+01,Assinatura ilegivel (Ficha 01),Grupo F,Holanda,Japão,1,0
+01,Assinatura ilegivel (Ficha 01),Grupo F,Suécia,Tunísia,1,0
+01,Assinatura ilegivel (Ficha 01),Grupo F,Holanda,Suécia,2,0
+01,Assinatura ilegivel (Ficha 01),Grupo F,Tunísia,Japão,0,2
+01,Assinatura ilegivel (Ficha 01),Grupo F,Japão,Suécia,1,1
+01,Assinatura ilegivel (Ficha 01),Grupo F,Tunísia,Holanda,0,0
+01,Assinatura ilegivel (Ficha 01),Grupo G,Bélgica,Egito,1,2
+01,Assinatura ilegivel (Ficha 01),Grupo G,Irã,Nova Zelandia,2,0
+01,Assinatura ilegivel (Ficha 01),Grupo G,Bélgica,Irã,4,0
+01,Assinatura ilegivel (Ficha 01),Grupo G,Nova Zelandia,Egito,0,1
+01,Assinatura ilegivel (Ficha 01),Grupo G,Egito,Irã,2,1
+01,Assinatura ilegivel (Ficha 01),Grupo G,Nova Zelandia,Bélgica,0,3
+01,Assinatura ilegivel (Ficha 01),Grupo H,Espanha,Cabo Verde,3,0
+01,Assinatura ilegivel (Ficha 01),Grupo H,Arábia Saudita,Uruguai,1,0
+01,Assinatura ilegivel (Ficha 01),Grupo H,Espanha,Arábia Saudita,2,0
+01,Assinatura ilegivel (Ficha 01),Grupo H,Uruguai,Cabo Verde,2,0
+01,Assinatura ilegivel (Ficha 01),Grupo H,Cabo Verde,Arábia Saudita,1,0
+01,Assinatura ilegivel (Ficha 01),Grupo H,Uruguai,Espanha,1,2
+01,Assinatura ilegivel (Ficha 01),Grupo I,França,Senegal,0,1
+01,Assinatura ilegivel (Ficha 01),Grupo I,Iraque,Noruega,0,2
+01,Assinatura ilegivel (Ficha 01),Grupo I,França,Iraque,2,0
+01,Assinatura ilegivel (Ficha 01),Grupo I,Noruega,Senegal,1,2
+01,Assinatura ilegivel (Ficha 01),Grupo I,Senegal,Iraque,2,0
+01,Assinatura ilegivel (Ficha 01),Grupo I,Noruega,França,1,2
+01,Assinatura ilegivel (Ficha 01),Grupo J,Argentina,Argélia,2,1
+01,Assinatura ilegivel (Ficha 01),Grupo J,Austria,Jordânia,2,1
+01,Assinatura ilegivel (Ficha 01),Grupo J,Argentina,Austria,4,1
+01,Assinatura ilegivel (Ficha 01),Grupo J,Jordânia,Argélia,0,1
+01,Assinatura ilegivel (Ficha 01),Grupo J,Argélia,Austria,1,1
+01,Assinatura ilegivel (Ficha 01),Grupo J,Jordânia,Argentina,0,2
+01,Assinatura ilegivel (Ficha 01),Grupo L,Portugal,Congo DR,2,0
+01,Assinatura ilegivel (Ficha 01),Grupo L,Uzbequistão,Colômbia,0,1
+01,Assinatura ilegivel (Ficha 01),Grupo L,Portugal,Uzbequistão,3,1
+01,Assinatura ilegivel (Ficha 01),Grupo L,Colômbia,Congo DR,1,0
+01,Assinatura ilegivel (Ficha 01),Grupo L,Congo DR,Uzbequistão,1,2
+01,Assinatura ilegivel (Ficha 01),Grupo L,Colômbia,Portugal,1,2
+01,Assinatura ilegivel (Ficha 01),Grupo M,Inglaterra,Croácia,1,1
+01,Assinatura ilegivel (Ficha 01),Grupo M,Gana,Panamá,1,0
+01,Assinatura ilegivel (Ficha 01),Grupo M,Inglaterra,Gana,3,0
+01,Assinatura ilegivel (Ficha 01),Grupo M,Panamá,Croácia,0,2
+01,Assinatura ilegivel (Ficha 01),Grupo M,Croácia,Gana,2,1
+01,Assinatura ilegivel (Ficha 01),Grupo M,Panamá,Inglaterra,0,2

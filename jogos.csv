@@ -1,0 +1,73 @@
+grupo,casa,fora
+Grupo A,México,África do Sul
+Grupo A,Coreia do Sul,Rep. Checa
+Grupo A,Rep. Checa,África do Sul
+Grupo A,México,Coreia do Sul
+Grupo A,África do Sul,Coreia do Sul
+Grupo A,Rep. Checa,México
+Grupo B,Canadá,Bósnia e Herzeg.
+Grupo B,Catar,Suiça
+Grupo B,Suiça,Bósnia e Herzeg.
+Grupo B,Canadá,Catar
+Grupo B,Bósnia e Herzeg.,Catar
+Grupo B,Suiça,Canadá
+Grupo C,Brasil,Marrocos
+Grupo C,Haiti,Escócia
+Grupo C,Escócia,Marrocos
+Grupo C,Brasil,Haiti
+Grupo C,Marrocos,Haiti
+Grupo C,Escócia,Brasil
+Grupo D,EUA,Paraguai
+Grupo D,Austrália,Turquia
+Grupo D,EUA,Austrália
+Grupo D,Turquia,Paraguai
+Grupo D,Paraguai,Austrália
+Grupo D,Turquia,EUA
+Grupo E,Alemanha,Curaçao
+Grupo E,Costa do Marfim,Equador
+Grupo E,Alemanha,Costa do Marfim
+Grupo E,Equador,Curaçao
+Grupo E,Curaçao,Costa do Marfim
+Grupo E,Equador,Alemanha
+Grupo F,Holanda,Japão
+Grupo F,Suécia,Tunísia
+Grupo F,Holanda,Suécia
+Grupo F,Tunísia,Japão
+Grupo F,Japão,Suécia
+Grupo F,Tunísia,Holanda
+Grupo G,Bélgica,Egito
+Grupo G,Irã,Nova Zelandia
+Grupo G,Bélgica,Irã
+Grupo G,Nova Zelandia,Egito
+Grupo G,Egito,Irã
+Grupo G,Nova Zelandia,Bélgica
+Grupo H,Espanha,Cabo Verde
+Grupo H,Arábia Saudita,Uruguai
+Grupo H,Espanha,Arábia Saudita
+Grupo H,Uruguai,Cabo Verde
+Grupo H,Cabo Verde,Arábia Saudita
+Grupo H,Uruguai,Espanha
+Grupo I,França,Senegal
+Grupo I,Iraque,Noruega
+Grupo I,França,Iraque
+Grupo I,Noruega,Senegal
+Grupo I,Senegal,Iraque
+Grupo I,Noruega,França
+Grupo J,Argentina,Argélia
+Grupo J,Austria,Jordânia
+Grupo J,Argentina,Austria
+Grupo J,Jordânia,Argélia
+Grupo J,Argélia,Austria
+Grupo J,Jordânia,Argentina
+Grupo L,Portugal,Congo DR
+Grupo L,Uzbequistão,Colômbia
+Grupo L,Portugal,Uzbequistão
+Grupo L,Colômbia,Congo DR
+Grupo L,Congo DR,Uzbequistão
+Grupo L,Colômbia,Portugal
+Grupo M,Inglaterra,Croácia
+Grupo M,Gana,Panamá
+Grupo M,Inglaterra,Gana
+Grupo M,Panamá,Croácia
+Grupo M,Croácia,Gana
+Grupo M,Panamá,Inglaterra
