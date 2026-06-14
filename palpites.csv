@@ -215,3 +215,147 @@ ficha,participante,grupo,casa,fora,palpite_casa,palpite_fora
 03,Thiago Espedito (nome de dificil leitura),Grupo M,Panamá,Croácia,0,2
 03,Thiago Espedito (nome de dificil leitura),Grupo M,Croácia,Gana,2,0
 03,Thiago Espedito (nome de dificil leitura),Grupo M,Panamá,Inglaterra,1,3
+04,WAGNER,Grupo A,México,África do Sul,2,1
+04,WAGNER,Grupo A,Coreia do Sul,Rep. Checa,1,0
+04,WAGNER,Grupo A,Rep. Checa,África do Sul,2,2
+04,WAGNER,Grupo A,México,Coreia do Sul,3,1
+04,WAGNER,Grupo A,África do Sul,Coreia do Sul,2,2
+04,WAGNER,Grupo A,Rep. Checa,México,1,2
+04,WAGNER,Grupo B,Canadá,Bósnia e Herzeg.,2,0
+04,WAGNER,Grupo B,Catar,Suiça,1,3
+04,WAGNER,Grupo B,Suiça,Bósnia e Herzeg.,2,2
+04,WAGNER,Grupo B,Canadá,Catar,3,1
+04,WAGNER,Grupo B,Bósnia e Herzeg.,Catar,2,1
+04,WAGNER,Grupo B,Suiça,Canadá,1,0
+04,WAGNER,Grupo C,Brasil,Marrocos,2,0
+04,WAGNER,Grupo C,Haiti,Escócia,0,3
+04,WAGNER,Grupo C,Escócia,Marrocos,1,2
+04,WAGNER,Grupo C,Brasil,Haiti,3,0
+04,WAGNER,Grupo C,Marrocos,Haiti,2,1
+04,WAGNER,Grupo C,Escócia,Brasil,0,1
+04,WAGNER,Grupo D,EUA,Paraguai,1,1
+04,WAGNER,Grupo D,Austrália,Turquia,1,2
+04,WAGNER,Grupo D,EUA,Austrália,2,0
+04,WAGNER,Grupo D,Turquia,Paraguai,2,1
+04,WAGNER,Grupo D,Paraguai,Austrália,2,0
+04,WAGNER,Grupo D,Turquia,EUA,1,1
+04,WAGNER,Grupo E,Alemanha,Curaçao,4,1
+04,WAGNER,Grupo E,Costa do Marfim,Equador,1,2
+04,WAGNER,Grupo E,Alemanha,Costa do Marfim,2,0
+04,WAGNER,Grupo E,Equador,Curaçao,3,1
+04,WAGNER,Grupo E,Curaçao,Costa do Marfim,1,1
+04,WAGNER,Grupo E,Equador,Alemanha,1,2
+04,WAGNER,Grupo F,Holanda,Japão,3,2
+04,WAGNER,Grupo F,Suécia,Tunísia,2,1
+04,WAGNER,Grupo F,Holanda,Suécia,2,1
+04,WAGNER,Grupo F,Tunísia,Japão,0,1
+04,WAGNER,Grupo F,Japão,Suécia,2,1
+04,WAGNER,Grupo F,Tunísia,Holanda,0,2
+04,WAGNER,Grupo G,Bélgica,Egito,2,2
+04,WAGNER,Grupo G,Irã,Nova Zelandia,0,0
+04,WAGNER,Grupo G,Bélgica,Irã,1,0
+04,WAGNER,Grupo G,Nova Zelandia,Egito,1,2
+04,WAGNER,Grupo G,Egito,Irã,2,0
+04,WAGNER,Grupo G,Nova Zelandia,Bélgica,1,3
+04,WAGNER,Grupo H,Espanha,Cabo Verde,2,0
+04,WAGNER,Grupo H,Arábia Saudita,Uruguai,1,3
+04,WAGNER,Grupo H,Espanha,Arábia Saudita,3,0
+04,WAGNER,Grupo H,Uruguai,Cabo Verde,2,0
+04,WAGNER,Grupo H,Cabo Verde,Arábia Saudita,1,1
+04,WAGNER,Grupo H,Uruguai,Espanha,2,1
+04,WAGNER,Grupo I,França,Senegal,2,1
+04,WAGNER,Grupo I,Iraque,Noruega,0,1
+04,WAGNER,Grupo I,França,Iraque,2,0
+04,WAGNER,Grupo I,Noruega,Senegal,2,1
+04,WAGNER,Grupo I,Senegal,Iraque,1,0
+04,WAGNER,Grupo I,Noruega,França,1,2
+04,WAGNER,Grupo J,Argentina,Argélia,2,0
+04,WAGNER,Grupo J,Austria,Jordânia,1,1
+04,WAGNER,Grupo J,Argentina,Austria,3,1
+04,WAGNER,Grupo J,Jordânia,Argélia,0,1
+04,WAGNER,Grupo J,Argélia,Austria,1,1
+04,WAGNER,Grupo J,Jordânia,Argentina,0,4
+04,WAGNER,Grupo L,Portugal,Congo DR,3,0
+04,WAGNER,Grupo L,Uzbequistão,Colômbia,2,1
+04,WAGNER,Grupo L,Portugal,Uzbequistão,4,0
+04,WAGNER,Grupo L,Colômbia,Congo DR,2,0
+04,WAGNER,Grupo L,Congo DR,Uzbequistão,2,2
+04,WAGNER,Grupo L,Colômbia,Portugal,1,2
+04,WAGNER,Grupo M,Inglaterra,Croácia,1,1
+04,WAGNER,Grupo M,Gana,Panamá,1,0
+04,WAGNER,Grupo M,Inglaterra,Gana,3,1
+04,WAGNER,Grupo M,Panamá,Croácia,0,2
+04,WAGNER,Grupo M,Croácia,Gana,3,0
+04,WAGNER,Grupo M,Panamá,Inglaterra,0,4
+05,Samela Mendes,Grupo A,México,África do Sul,2,0
+05,Samela Mendes,Grupo A,Coreia do Sul,Rep. Checa,1,1
+05,Samela Mendes,Grupo A,Rep. Checa,África do Sul,1,2
+05,Samela Mendes,Grupo A,México,Coreia do Sul,2,0
+05,Samela Mendes,Grupo A,África do Sul,Coreia do Sul,2,0
+05,Samela Mendes,Grupo A,Rep. Checa,México,0,4
+05,Samela Mendes,Grupo B,Canadá,Bósnia e Herzeg.,1,0
+05,Samela Mendes,Grupo B,Catar,Suiça,2,2
+05,Samela Mendes,Grupo B,Suiça,Bósnia e Herzeg.,2,0
+05,Samela Mendes,Grupo B,Canadá,Catar,2,1
+05,Samela Mendes,Grupo B,Bósnia e Herzeg.,Catar,0,1
+05,Samela Mendes,Grupo B,Suiça,Canadá,,2
+05,Samela Mendes,Grupo C,Brasil,Marrocos,2,2
+05,Samela Mendes,Grupo C,Haiti,Escócia,0,2
+05,Samela Mendes,Grupo C,Escócia,Marrocos,1,2
+05,Samela Mendes,Grupo C,Brasil,Haiti,1,0
+05,Samela Mendes,Grupo C,Marrocos,Haiti,3,1
+05,Samela Mendes,Grupo C,Escócia,Brasil,1,1
+05,Samela Mendes,Grupo D,EUA,Paraguai,1,2
+05,Samela Mendes,Grupo D,Austrália,Turquia,1,1
+05,Samela Mendes,Grupo D,EUA,Austrália,2,2
+05,Samela Mendes,Grupo D,Turquia,Paraguai,1,2
+05,Samela Mendes,Grupo D,Paraguai,Austrália,2,1
+05,Samela Mendes,Grupo D,Turquia,EUA,0,2
+05,Samela Mendes,Grupo E,Alemanha,Curaçao,2,
+05,Samela Mendes,Grupo E,Costa do Marfim,Equador,2,
+05,Samela Mendes,Grupo E,Alemanha,Costa do Marfim,2,
+05,Samela Mendes,Grupo E,Equador,Curaçao,2,1
+05,Samela Mendes,Grupo E,Curaçao,Costa do Marfim,0,1
+05,Samela Mendes,Grupo E,Equador,Alemanha,1,1
+05,Samela Mendes,Grupo F,Holanda,Japão,2,
+05,Samela Mendes,Grupo F,Suécia,Tunísia,0,0
+05,Samela Mendes,Grupo F,Holanda,Suécia,1,2
+05,Samela Mendes,Grupo F,Tunísia,Japão,,
+05,Samela Mendes,Grupo F,Japão,Suécia,2,
+05,Samela Mendes,Grupo F,Tunísia,Holanda,,1
+05,Samela Mendes,Grupo G,Bélgica,Egito,3,
+05,Samela Mendes,Grupo G,Irã,Nova Zelandia,2,2
+05,Samela Mendes,Grupo G,Bélgica,Irã,2,
+05,Samela Mendes,Grupo G,Nova Zelandia,Egito,0,2
+05,Samela Mendes,Grupo G,Egito,Irã,1,
+05,Samela Mendes,Grupo G,Nova Zelandia,Bélgica,1,2
+05,Samela Mendes,Grupo H,Espanha,Cabo Verde,3,0
+05,Samela Mendes,Grupo H,Arábia Saudita,Uruguai,1,
+05,Samela Mendes,Grupo H,Espanha,Arábia Saudita,2,
+05,Samela Mendes,Grupo H,Uruguai,Cabo Verde,,
+05,Samela Mendes,Grupo H,Cabo Verde,Arábia Saudita,,
+05,Samela Mendes,Grupo H,Uruguai,Espanha,2,
+05,Samela Mendes,Grupo I,França,Senegal,1,
+05,Samela Mendes,Grupo I,Iraque,Noruega,0,2
+05,Samela Mendes,Grupo I,França,Iraque,,2
+05,Samela Mendes,Grupo I,Noruega,Senegal,,
+05,Samela Mendes,Grupo I,Senegal,Iraque,2,
+05,Samela Mendes,Grupo I,Noruega,França,1,3
+05,Samela Mendes,Grupo J,Argentina,Argélia,4,1
+05,Samela Mendes,Grupo J,Austria,Jordânia,2,1
+05,Samela Mendes,Grupo J,Argentina,Austria,2,1
+05,Samela Mendes,Grupo J,Jordânia,Argélia,0,1
+05,Samela Mendes,Grupo J,Argélia,Austria,0,
+05,Samela Mendes,Grupo J,Jordânia,Argentina,0,2
+05,Samela Mendes,Grupo L,Portugal,Congo DR,,0
+05,Samela Mendes,Grupo L,Uzbequistão,Colômbia,2,2
+05,Samela Mendes,Grupo L,Portugal,Uzbequistão,,
+05,Samela Mendes,Grupo L,Colômbia,Congo DR,,
+05,Samela Mendes,Grupo L,Congo DR,Uzbequistão,,
+05,Samela Mendes,Grupo L,Colômbia,Portugal,2,
+05,Samela Mendes,Grupo M,Inglaterra,Croácia,2,
+05,Samela Mendes,Grupo M,Gana,Panamá,1,
+05,Samela Mendes,Grupo M,Inglaterra,Gana,1,2
+05,Samela Mendes,Grupo M,Panamá,Croácia,,
+05,Samela Mendes,Grupo M,Croácia,Gana,2,
+05,Samela Mendes,Grupo M,Panamá,Inglaterra,,2

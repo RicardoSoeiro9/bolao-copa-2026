@@ -13,6 +13,15 @@ from pathlib import Path
 
 PASTA = Path(__file__).parent
 
+# ficha -> nome do arquivo da foto do formulário (para o relatório de pendências)
+FOTO_POR_FICHA: dict[str, str] = {
+    "01": "WhatsApp Image 2026-06-13 at 17.46.58 (1).jpeg",
+    "02": "WhatsApp Image 2026-06-13 at 17.46.58 (2).jpeg",
+    "03": "WhatsApp Image 2026-06-13 at 17.46.58 (3).jpeg",
+    "04": "WhatsApp Image 2026-06-13 at 17.46.58.jpeg",
+    "05": "WhatsApp Image 2026-06-13 at 17.46.59 (1).jpeg",
+}
+
 # ficha (como em participantes.csv) -> 72 placares na ordem de jogos.csv
 PALPITES_POR_FICHA: dict[str, list[tuple[int | None, int | None]]] = {
     # Ficha 01 — "Assinatura ilegivel (Ficha 01)"  (foto: ...17.46.58 (1).jpeg)
@@ -72,6 +81,37 @@ PALPITES_POR_FICHA: dict[str, list[tuple[int | None, int | None]]] = {
         (2, 0), (0, 2), (2, 0), (2, 0), (0, 2), (0, 2),    # L
         (2, 0), (1, 0), (1, 0), (0, 2), (2, 0), (1, 3),    # M
     ],
+    # Ficha 04 — "WAGNER"  (foto: ...17.46.58.jpeg)
+    "04": [
+        (2, 1), (1, 0), (2, 2), (3, 1), (2, 2), (1, 2),    # A
+        (2, 0), (1, 3), (2, 2), (3, 1), (2, 1), (1, 0),    # B
+        (2, 0), (0, 3), (1, 2), (3, 0), (2, 1), (0, 1),    # C
+        (1, 1), (1, 2), (2, 0), (2, 1), (2, 0), (1, 1),    # D
+        (4, 1), (1, 2), (2, 0), (3, 1), (1, 1), (1, 2),    # E
+        (3, 2), (2, 1), (2, 1), (0, 1), (2, 1), (0, 2),    # F
+        (2, 2), (0, 0), (1, 0), (1, 2), (2, 0), (1, 3),    # G
+        (2, 0), (1, 3), (3, 0), (2, 0), (1, 1), (2, 1),    # H
+        (2, 1), (0, 1), (2, 0), (2, 1), (1, 0), (1, 2),    # I
+        (2, 0), (1, 1), (3, 1), (0, 1), (1, 1), (0, 4),    # J
+        (3, 0), (2, 1), (4, 0), (2, 0), (2, 2), (1, 2),    # L
+        (1, 1), (1, 0), (3, 1), (0, 2), (3, 0), (0, 4),    # M
+    ],
+    # Ficha 05 — "Samela Mendes"  (foto: ...17.46.59 (1).jpeg)
+    # Caneta com traço grosso + transparência do verso: coluna "fora" muito confusa.
+    "05": [
+        (2, 0), (1, 1), (1, 2), (2, 0), (2, 0), (0, 4),              # A
+        (1, 0), (2, 2), (2, 0), (2, 1), (0, 1), (None, 2),           # B
+        (2, 2), (0, 2), (1, 2), (1, 0), (3, 1), (1, 1),              # C
+        (1, 2), (1, 1), (2, 2), (1, 2), (2, 1), (0, 2),              # D
+        (2, None), (2, None), (2, None), (2, 1), (0, 1), (1, 1),     # E
+        (2, None), (0, 0), (1, 2), (None, None), (2, None), (None, 1),  # F
+        (3, None), (2, 2), (2, None), (0, 2), (1, None), (1, 2),     # G
+        (3, 0), (1, None), (2, None), (None, None), (None, None), (2, None),  # H
+        (1, None), (0, 2), (None, 2), (None, None), (2, None), (1, 3),  # I
+        (4, 1), (2, 1), (2, 1), (0, 1), (0, None), (0, 2),           # J
+        (None, 0), (2, 2), (None, None), (None, None), (None, None), (2, None),  # L
+        (2, None), (1, None), (1, 2), (None, None), (2, None), (None, 2),  # M
+    ],
 }
 
 
@@ -87,13 +127,20 @@ def main() -> None:
             jogos.append(row)
 
     linhas = []
+    pendentes = []  # (ficha, foto, grupo, "casa x fora", lado)
     for ficha, placares in PALPITES_POR_FICHA.items():
         nome = participantes.get(ficha, f"Ficha {ficha}")
+        foto = FOTO_POR_FICHA.get(ficha, "?")
         if len(placares) != len(jogos):
             raise SystemExit(
                 f"Ficha {ficha}: {len(placares)} placares, mas jogos.csv tem {len(jogos)}."
             )
         for jogo, (pc, pf) in zip(jogos, placares):
+            jogo_txt = f"{jogo['casa']} x {jogo['fora']}"
+            if pc is None:
+                pendentes.append((ficha, foto, jogo["grupo"], jogo_txt, "placar de " + jogo["casa"]))
+            if pf is None:
+                pendentes.append((ficha, foto, jogo["grupo"], jogo_txt, "placar de " + jogo["fora"]))
             linhas.append(
                 {
                     "ficha": ficha,
@@ -112,7 +159,23 @@ def main() -> None:
         w.writeheader()
         w.writerows(linhas)
 
+    # Relatório de campos ilegíveis a confirmar (por foto)
+    with open(PASTA / "pendentes.md", "w", encoding="utf-8") as f:
+        f.write("# Campos a confirmar (placares ilegíveis nas fotos)\n\n")
+        f.write(f"Total de campos pendentes: **{len(pendentes)}**\n\n")
+        for ficha in PALPITES_POR_FICHA:
+            do_ficha = [p for p in pendentes if p[0] == ficha]
+            if not do_ficha:
+                continue
+            foto = FOTO_POR_FICHA.get(ficha, "?")
+            f.write(f"## Ficha {ficha} — {participantes.get(ficha, '?')}\n")
+            f.write(f"Foto: `{foto}`\n\n")
+            for _, _, grupo, jogo_txt, lado in do_ficha:
+                f.write(f"- {grupo} · {jogo_txt} · {lado}\n")
+            f.write("\n")
+
     print(f"palpites.csv gerado: {len(linhas)} linhas, {len(PALPITES_POR_FICHA)} ficha(s).")
+    print(f"pendentes.md gerado: {len(pendentes)} campo(s) a confirmar.")
 
 
 if __name__ == "__main__":
