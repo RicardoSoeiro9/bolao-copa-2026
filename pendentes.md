@@ -1,6 +1,6 @@
 # Campos a confirmar (placares ilegíveis nas fotos)
 
-Total de campos pendentes: **39**
+Total de campos pendentes: **43**
 
 ## Ficha 05 — Samela Mendes
 Foto: `WhatsApp Image 2026-06-13 at 17.46.59 (1).jpeg`
@@ -44,4 +44,12 @@ Foto: `WhatsApp Image 2026-06-13 at 17.46.59 (1).jpeg`
 - Grupo M · Panamá x Croácia · placar de Croácia
 - Grupo M · Croácia x Gana · placar de Gana
 - Grupo M · Panamá x Inglaterra · placar de Panamá
+
+## Ficha 06 — Sebastiao dos Santos
+Foto: `WhatsApp Image 2026-06-13 at 17.46.59.jpeg`
+
+- Grupo B · Suiça x Canadá · placar de Suiça
+- Grupo B · Suiça x Canadá · placar de Canadá
+- Grupo G · Nova Zelandia x Bélgica · placar de Nova Zelandia
+- Grupo G · Nova Zelandia x Bélgica · placar de Bélgica
 

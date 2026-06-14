@@ -359,3 +359,147 @@ ficha,participante,grupo,casa,fora,palpite_casa,palpite_fora
 05,Samela Mendes,Grupo M,Panamá,Croácia,,
 05,Samela Mendes,Grupo M,Croácia,Gana,2,
 05,Samela Mendes,Grupo M,Panamá,Inglaterra,,2
+06,Sebastiao dos Santos,Grupo A,México,África do Sul,0,1
+06,Sebastiao dos Santos,Grupo A,Coreia do Sul,Rep. Checa,1,2
+06,Sebastiao dos Santos,Grupo A,Rep. Checa,África do Sul,2,1
+06,Sebastiao dos Santos,Grupo A,México,Coreia do Sul,2,1
+06,Sebastiao dos Santos,Grupo A,África do Sul,Coreia do Sul,1,1
+06,Sebastiao dos Santos,Grupo A,Rep. Checa,México,1,2
+06,Sebastiao dos Santos,Grupo B,Canadá,Bósnia e Herzeg.,1,0
+06,Sebastiao dos Santos,Grupo B,Catar,Suiça,1,2
+06,Sebastiao dos Santos,Grupo B,Suiça,Bósnia e Herzeg.,2,0
+06,Sebastiao dos Santos,Grupo B,Canadá,Catar,0,1
+06,Sebastiao dos Santos,Grupo B,Bósnia e Herzeg.,Catar,2,0
+06,Sebastiao dos Santos,Grupo B,Suiça,Canadá,,
+06,Sebastiao dos Santos,Grupo C,Brasil,Marrocos,2,1
+06,Sebastiao dos Santos,Grupo C,Haiti,Escócia,0,1
+06,Sebastiao dos Santos,Grupo C,Escócia,Marrocos,1,2
+06,Sebastiao dos Santos,Grupo C,Brasil,Haiti,2,0
+06,Sebastiao dos Santos,Grupo C,Marrocos,Haiti,1,0
+06,Sebastiao dos Santos,Grupo C,Escócia,Brasil,2,2
+06,Sebastiao dos Santos,Grupo D,EUA,Paraguai,1,0
+06,Sebastiao dos Santos,Grupo D,Austrália,Turquia,1,1
+06,Sebastiao dos Santos,Grupo D,EUA,Austrália,2,2
+06,Sebastiao dos Santos,Grupo D,Turquia,Paraguai,1,0
+06,Sebastiao dos Santos,Grupo D,Paraguai,Austrália,0,2
+06,Sebastiao dos Santos,Grupo D,Turquia,EUA,1,1
+06,Sebastiao dos Santos,Grupo E,Alemanha,Curaçao,3,2
+06,Sebastiao dos Santos,Grupo E,Costa do Marfim,Equador,1,0
+06,Sebastiao dos Santos,Grupo E,Alemanha,Costa do Marfim,2,3
+06,Sebastiao dos Santos,Grupo E,Equador,Curaçao,1,1
+06,Sebastiao dos Santos,Grupo E,Curaçao,Costa do Marfim,2,1
+06,Sebastiao dos Santos,Grupo E,Equador,Alemanha,1,1
+06,Sebastiao dos Santos,Grupo F,Holanda,Japão,2,2
+06,Sebastiao dos Santos,Grupo F,Suécia,Tunísia,1,3
+06,Sebastiao dos Santos,Grupo F,Holanda,Suécia,2,3
+06,Sebastiao dos Santos,Grupo F,Tunísia,Japão,1,1
+06,Sebastiao dos Santos,Grupo F,Japão,Suécia,2,2
+06,Sebastiao dos Santos,Grupo F,Tunísia,Holanda,2,3
+06,Sebastiao dos Santos,Grupo G,Bélgica,Egito,2,2
+06,Sebastiao dos Santos,Grupo G,Irã,Nova Zelandia,1,2
+06,Sebastiao dos Santos,Grupo G,Bélgica,Irã,2,1
+06,Sebastiao dos Santos,Grupo G,Nova Zelandia,Egito,1,0
+06,Sebastiao dos Santos,Grupo G,Egito,Irã,0,0
+06,Sebastiao dos Santos,Grupo G,Nova Zelandia,Bélgica,,
+06,Sebastiao dos Santos,Grupo H,Espanha,Cabo Verde,1,0
+06,Sebastiao dos Santos,Grupo H,Arábia Saudita,Uruguai,2,2
+06,Sebastiao dos Santos,Grupo H,Espanha,Arábia Saudita,2,1
+06,Sebastiao dos Santos,Grupo H,Uruguai,Cabo Verde,1,0
+06,Sebastiao dos Santos,Grupo H,Cabo Verde,Arábia Saudita,3,1
+06,Sebastiao dos Santos,Grupo H,Uruguai,Espanha,1,2
+06,Sebastiao dos Santos,Grupo I,França,Senegal,1,1
+06,Sebastiao dos Santos,Grupo I,Iraque,Noruega,1,2
+06,Sebastiao dos Santos,Grupo I,França,Iraque,1,1
+06,Sebastiao dos Santos,Grupo I,Noruega,Senegal,1,1
+06,Sebastiao dos Santos,Grupo I,Senegal,Iraque,1,1
+06,Sebastiao dos Santos,Grupo I,Noruega,França,3,2
+06,Sebastiao dos Santos,Grupo J,Argentina,Argélia,2,1
+06,Sebastiao dos Santos,Grupo J,Austria,Jordânia,2,1
+06,Sebastiao dos Santos,Grupo J,Argentina,Austria,4,0
+06,Sebastiao dos Santos,Grupo J,Jordânia,Argélia,1,1
+06,Sebastiao dos Santos,Grupo J,Argélia,Austria,2,2
+06,Sebastiao dos Santos,Grupo J,Jordânia,Argentina,0,1
+06,Sebastiao dos Santos,Grupo L,Portugal,Congo DR,1,1
+06,Sebastiao dos Santos,Grupo L,Uzbequistão,Colômbia,0,1
+06,Sebastiao dos Santos,Grupo L,Portugal,Uzbequistão,1,2
+06,Sebastiao dos Santos,Grupo L,Colômbia,Congo DR,2,1
+06,Sebastiao dos Santos,Grupo L,Congo DR,Uzbequistão,0,1
+06,Sebastiao dos Santos,Grupo L,Colômbia,Portugal,0,2
+06,Sebastiao dos Santos,Grupo M,Inglaterra,Croácia,2,1
+06,Sebastiao dos Santos,Grupo M,Gana,Panamá,1,1
+06,Sebastiao dos Santos,Grupo M,Inglaterra,Gana,1,0
+06,Sebastiao dos Santos,Grupo M,Panamá,Croácia,2,2
+06,Sebastiao dos Santos,Grupo M,Croácia,Gana,1,1
+06,Sebastiao dos Santos,Grupo M,Panamá,Inglaterra,1,2
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo A,México,África do Sul,1,1
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo A,Coreia do Sul,Rep. Checa,1,1
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo A,Rep. Checa,África do Sul,2,1
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo A,México,Coreia do Sul,2,0
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo A,África do Sul,Coreia do Sul,1,1
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo A,Rep. Checa,México,1,2
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo B,Canadá,Bósnia e Herzeg.,3,0
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo B,Catar,Suiça,0,2
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo B,Suiça,Bósnia e Herzeg.,2,0
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo B,Canadá,Catar,2,0
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo B,Bósnia e Herzeg.,Catar,1,1
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo B,Suiça,Canadá,1,1
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo C,Brasil,Marrocos,2,0
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo C,Haiti,Escócia,0,2
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo C,Escócia,Marrocos,2,1
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo C,Brasil,Haiti,3,0
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo C,Marrocos,Haiti,2,0
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo C,Escócia,Brasil,1,3
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo D,EUA,Paraguai,1,2
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo D,Austrália,Turquia,1,2
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo D,EUA,Austrália,2,0
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo D,Turquia,Paraguai,1,1
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo D,Paraguai,Austrália,2,0
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo D,Turquia,EUA,2,1
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo E,Alemanha,Curaçao,4,0
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo E,Costa do Marfim,Equador,1,2
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo E,Alemanha,Costa do Marfim,3,0
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo E,Equador,Curaçao,3,0
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo E,Curaçao,Costa do Marfim,0,2
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo E,Equador,Alemanha,1,3
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo F,Holanda,Japão,2,0
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo F,Suécia,Tunísia,2,0
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo F,Holanda,Suécia,2,1
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo F,Tunísia,Japão,1,1
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo F,Japão,Suécia,1,2
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo F,Tunísia,Holanda,0,3
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo G,Bélgica,Egito,4,0
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo G,Irã,Nova Zelandia,1,1
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo G,Bélgica,Irã,3,0
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo G,Nova Zelandia,Egito,2,1
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo G,Egito,Irã,1,1
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo G,Nova Zelandia,Bélgica,0,3
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo H,Espanha,Cabo Verde,5,0
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo H,Arábia Saudita,Uruguai,0,2
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo H,Espanha,Arábia Saudita,3,0
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo H,Uruguai,Cabo Verde,4,0
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo H,Cabo Verde,Arábia Saudita,0,2
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo H,Uruguai,Espanha,1,2
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo I,França,Senegal,3,0
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo I,Iraque,Noruega,0,2
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo I,França,Iraque,5,0
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo I,Noruega,Senegal,1,2
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo I,Senegal,Iraque,2,0
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo I,Noruega,França,0,4
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo J,Argentina,Argélia,3,1
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo J,Austria,Jordânia,3,0
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo J,Argentina,Austria,3,0
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo J,Jordânia,Argélia,0,2
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo J,Argélia,Austria,1,1
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo J,Jordânia,Argentina,0,3
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo L,Portugal,Congo DR,4,0
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo L,Uzbequistão,Colômbia,0,3
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo L,Portugal,Uzbequistão,3,0
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo L,Colômbia,Congo DR,3,0
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo L,Congo DR,Uzbequistão,0,0
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo L,Colômbia,Portugal,2,2
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo M,Inglaterra,Croácia,2,1
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo M,Gana,Panamá,1,2
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo M,Inglaterra,Gana,3,0
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo M,Panamá,Croácia,0,2
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo M,Croácia,Gana,3,0
+07,Raiony 3884 Solda (texto no topo da ficha),Grupo M,Panamá,Inglaterra,0,2
