@@ -1295,3 +1295,147 @@ ficha,participante,grupo,casa,fora,palpite_casa,palpite_fora
 18,Isaque Santos,Grupo M,Panamá,Croácia,1,2
 18,Isaque Santos,Grupo M,Croácia,Gana,1,0
 18,Isaque Santos,Grupo M,Panamá,Inglaterra,1,2
+19,Gustavo (GS12),Grupo A,México,África do Sul,2,1
+19,Gustavo (GS12),Grupo A,Coreia do Sul,Rep. Checa,1,0
+19,Gustavo (GS12),Grupo A,Rep. Checa,África do Sul,1,1
+19,Gustavo (GS12),Grupo A,México,Coreia do Sul,2,0
+19,Gustavo (GS12),Grupo A,África do Sul,Coreia do Sul,0,1
+19,Gustavo (GS12),Grupo A,Rep. Checa,México,0,2
+19,Gustavo (GS12),Grupo B,Canadá,Bósnia e Herzeg.,1,0
+19,Gustavo (GS12),Grupo B,Catar,Suiça,0,2
+19,Gustavo (GS12),Grupo B,Suiça,Bósnia e Herzeg.,2,0
+19,Gustavo (GS12),Grupo B,Canadá,Catar,1,0
+19,Gustavo (GS12),Grupo B,Bósnia e Herzeg.,Catar,2,1
+19,Gustavo (GS12),Grupo B,Suiça,Canadá,2,1
+19,Gustavo (GS12),Grupo C,Brasil,Marrocos,2,0
+19,Gustavo (GS12),Grupo C,Haiti,Escócia,1,1
+19,Gustavo (GS12),Grupo C,Escócia,Marrocos,0,2
+19,Gustavo (GS12),Grupo C,Brasil,Haiti,3,1
+19,Gustavo (GS12),Grupo C,Marrocos,Haiti,3,0
+19,Gustavo (GS12),Grupo C,Escócia,Brasil,0,3
+19,Gustavo (GS12),Grupo D,EUA,Paraguai,2,2
+19,Gustavo (GS12),Grupo D,Austrália,Turquia,2,3
+19,Gustavo (GS12),Grupo D,EUA,Austrália,2,0
+19,Gustavo (GS12),Grupo D,Turquia,Paraguai,1,1
+19,Gustavo (GS12),Grupo D,Paraguai,Austrália,2,0
+19,Gustavo (GS12),Grupo D,Turquia,EUA,1,3
+19,Gustavo (GS12),Grupo E,Alemanha,Curaçao,3,1
+19,Gustavo (GS12),Grupo E,Costa do Marfim,Equador,2,0
+19,Gustavo (GS12),Grupo E,Alemanha,Costa do Marfim,2,0
+19,Gustavo (GS12),Grupo E,Equador,Curaçao,2,2
+19,Gustavo (GS12),Grupo E,Curaçao,Costa do Marfim,1,2
+19,Gustavo (GS12),Grupo E,Equador,Alemanha,2,3
+19,Gustavo (GS12),Grupo F,Holanda,Japão,1,2
+19,Gustavo (GS12),Grupo F,Suécia,Tunísia,2,0
+19,Gustavo (GS12),Grupo F,Holanda,Suécia,3,1
+19,Gustavo (GS12),Grupo F,Tunísia,Japão,0,2
+19,Gustavo (GS12),Grupo F,Japão,Suécia,2,2
+19,Gustavo (GS12),Grupo F,Tunísia,Holanda,1,3
+19,Gustavo (GS12),Grupo G,Bélgica,Egito,3,0
+19,Gustavo (GS12),Grupo G,Irã,Nova Zelandia,2,2
+19,Gustavo (GS12),Grupo G,Bélgica,Irã,2,1
+19,Gustavo (GS12),Grupo G,Nova Zelandia,Egito,2,2
+19,Gustavo (GS12),Grupo G,Egito,Irã,2,0
+19,Gustavo (GS12),Grupo G,Nova Zelandia,Bélgica,0,3
+19,Gustavo (GS12),Grupo H,Espanha,Cabo Verde,2,0
+19,Gustavo (GS12),Grupo H,Arábia Saudita,Uruguai,0,2
+19,Gustavo (GS12),Grupo H,Espanha,Arábia Saudita,3,0
+19,Gustavo (GS12),Grupo H,Uruguai,Cabo Verde,2,1
+19,Gustavo (GS12),Grupo H,Cabo Verde,Arábia Saudita,0,1
+19,Gustavo (GS12),Grupo H,Uruguai,Espanha,0,2
+19,Gustavo (GS12),Grupo I,França,Senegal,2,0
+19,Gustavo (GS12),Grupo I,Iraque,Noruega,1,0
+19,Gustavo (GS12),Grupo I,França,Iraque,3,1
+19,Gustavo (GS12),Grupo I,Noruega,Senegal,0,1
+19,Gustavo (GS12),Grupo I,Senegal,Iraque,2,2
+19,Gustavo (GS12),Grupo I,Noruega,França,0,3
+19,Gustavo (GS12),Grupo J,Argentina,Argélia,2,0
+19,Gustavo (GS12),Grupo J,Austria,Jordânia,1,0
+19,Gustavo (GS12),Grupo J,Argentina,Austria,2,1
+19,Gustavo (GS12),Grupo J,Jordânia,Argélia,0,1
+19,Gustavo (GS12),Grupo J,Argélia,Austria,2,2
+19,Gustavo (GS12),Grupo J,Jordânia,Argentina,1,3
+19,Gustavo (GS12),Grupo L,Portugal,Congo DR,3,1
+19,Gustavo (GS12),Grupo L,Uzbequistão,Colômbia,0,2
+19,Gustavo (GS12),Grupo L,Portugal,Uzbequistão,2,0
+19,Gustavo (GS12),Grupo L,Colômbia,Congo DR,2,1
+19,Gustavo (GS12),Grupo L,Congo DR,Uzbequistão,1,1
+19,Gustavo (GS12),Grupo L,Colômbia,Portugal,1,2
+19,Gustavo (GS12),Grupo M,Inglaterra,Croácia,2,1
+19,Gustavo (GS12),Grupo M,Gana,Panamá,0,1
+19,Gustavo (GS12),Grupo M,Inglaterra,Gana,1,1
+19,Gustavo (GS12),Grupo M,Panamá,Croácia,0,2
+19,Gustavo (GS12),Grupo M,Croácia,Gana,3,0
+19,Gustavo (GS12),Grupo M,Panamá,Inglaterra,1,4
+20,Joabe Mais (nome de dificil leitura),Grupo A,México,África do Sul,2,1
+20,Joabe Mais (nome de dificil leitura),Grupo A,Coreia do Sul,Rep. Checa,0,1
+20,Joabe Mais (nome de dificil leitura),Grupo A,Rep. Checa,África do Sul,0,0
+20,Joabe Mais (nome de dificil leitura),Grupo A,México,Coreia do Sul,2,0
+20,Joabe Mais (nome de dificil leitura),Grupo A,África do Sul,Coreia do Sul,2,1
+20,Joabe Mais (nome de dificil leitura),Grupo A,Rep. Checa,México,1,1
+20,Joabe Mais (nome de dificil leitura),Grupo B,Canadá,Bósnia e Herzeg.,1,0
+20,Joabe Mais (nome de dificil leitura),Grupo B,Catar,Suiça,1,2
+20,Joabe Mais (nome de dificil leitura),Grupo B,Suiça,Bósnia e Herzeg.,1,1
+20,Joabe Mais (nome de dificil leitura),Grupo B,Canadá,Catar,2,2
+20,Joabe Mais (nome de dificil leitura),Grupo B,Bósnia e Herzeg.,Catar,2,1
+20,Joabe Mais (nome de dificil leitura),Grupo B,Suiça,Canadá,2,2
+20,Joabe Mais (nome de dificil leitura),Grupo C,Brasil,Marrocos,2,1
+20,Joabe Mais (nome de dificil leitura),Grupo C,Haiti,Escócia,2,0
+20,Joabe Mais (nome de dificil leitura),Grupo C,Escócia,Marrocos,1,2
+20,Joabe Mais (nome de dificil leitura),Grupo C,Brasil,Haiti,2,0
+20,Joabe Mais (nome de dificil leitura),Grupo C,Marrocos,Haiti,2,1
+20,Joabe Mais (nome de dificil leitura),Grupo C,Escócia,Brasil,1,3
+20,Joabe Mais (nome de dificil leitura),Grupo D,EUA,Paraguai,2,1
+20,Joabe Mais (nome de dificil leitura),Grupo D,Austrália,Turquia,0,1
+20,Joabe Mais (nome de dificil leitura),Grupo D,EUA,Austrália,1,2
+20,Joabe Mais (nome de dificil leitura),Grupo D,Turquia,Paraguai,0,2
+20,Joabe Mais (nome de dificil leitura),Grupo D,Paraguai,Austrália,2,2
+20,Joabe Mais (nome de dificil leitura),Grupo D,Turquia,EUA,0,2
+20,Joabe Mais (nome de dificil leitura),Grupo E,Alemanha,Curaçao,3,1
+20,Joabe Mais (nome de dificil leitura),Grupo E,Costa do Marfim,Equador,1,2
+20,Joabe Mais (nome de dificil leitura),Grupo E,Alemanha,Costa do Marfim,2,1
+20,Joabe Mais (nome de dificil leitura),Grupo E,Equador,Curaçao,1,2
+20,Joabe Mais (nome de dificil leitura),Grupo E,Curaçao,Costa do Marfim,0,2
+20,Joabe Mais (nome de dificil leitura),Grupo E,Equador,Alemanha,1,3
+20,Joabe Mais (nome de dificil leitura),Grupo F,Holanda,Japão,3,1
+20,Joabe Mais (nome de dificil leitura),Grupo F,Suécia,Tunísia,1,2
+20,Joabe Mais (nome de dificil leitura),Grupo F,Holanda,Suécia,2,1
+20,Joabe Mais (nome de dificil leitura),Grupo F,Tunísia,Japão,0,1
+20,Joabe Mais (nome de dificil leitura),Grupo F,Japão,Suécia,2,1
+20,Joabe Mais (nome de dificil leitura),Grupo F,Tunísia,Holanda,0,2
+20,Joabe Mais (nome de dificil leitura),Grupo G,Bélgica,Egito,1,2
+20,Joabe Mais (nome de dificil leitura),Grupo G,Irã,Nova Zelandia,1,1
+20,Joabe Mais (nome de dificil leitura),Grupo G,Bélgica,Irã,2,0
+20,Joabe Mais (nome de dificil leitura),Grupo G,Nova Zelandia,Egito,1,2
+20,Joabe Mais (nome de dificil leitura),Grupo G,Egito,Irã,2,2
+20,Joabe Mais (nome de dificil leitura),Grupo G,Nova Zelandia,Bélgica,1,3
+20,Joabe Mais (nome de dificil leitura),Grupo H,Espanha,Cabo Verde,4,1
+20,Joabe Mais (nome de dificil leitura),Grupo H,Arábia Saudita,Uruguai,1,3
+20,Joabe Mais (nome de dificil leitura),Grupo H,Espanha,Arábia Saudita,2,0
+20,Joabe Mais (nome de dificil leitura),Grupo H,Uruguai,Cabo Verde,2,1
+20,Joabe Mais (nome de dificil leitura),Grupo H,Cabo Verde,Arábia Saudita,1,0
+20,Joabe Mais (nome de dificil leitura),Grupo H,Uruguai,Espanha,2,3
+20,Joabe Mais (nome de dificil leitura),Grupo I,França,Senegal,2,1
+20,Joabe Mais (nome de dificil leitura),Grupo I,Iraque,Noruega,2,2
+20,Joabe Mais (nome de dificil leitura),Grupo I,França,Iraque,2,0
+20,Joabe Mais (nome de dificil leitura),Grupo I,Noruega,Senegal,1,2
+20,Joabe Mais (nome de dificil leitura),Grupo I,Senegal,Iraque,2,0
+20,Joabe Mais (nome de dificil leitura),Grupo I,Noruega,França,1,2
+20,Joabe Mais (nome de dificil leitura),Grupo J,Argentina,Argélia,2,0
+20,Joabe Mais (nome de dificil leitura),Grupo J,Austria,Jordânia,1,1
+20,Joabe Mais (nome de dificil leitura),Grupo J,Argentina,Austria,3,1
+20,Joabe Mais (nome de dificil leitura),Grupo J,Jordânia,Argélia,2,0
+20,Joabe Mais (nome de dificil leitura),Grupo J,Argélia,Austria,2,2
+20,Joabe Mais (nome de dificil leitura),Grupo J,Jordânia,Argentina,2,3
+20,Joabe Mais (nome de dificil leitura),Grupo L,Portugal,Congo DR,3,0
+20,Joabe Mais (nome de dificil leitura),Grupo L,Uzbequistão,Colômbia,1,2
+20,Joabe Mais (nome de dificil leitura),Grupo L,Portugal,Uzbequistão,2,2
+20,Joabe Mais (nome de dificil leitura),Grupo L,Colômbia,Congo DR,2,1
+20,Joabe Mais (nome de dificil leitura),Grupo L,Congo DR,Uzbequistão,0,3
+20,Joabe Mais (nome de dificil leitura),Grupo L,Colômbia,Portugal,2,3
+20,Joabe Mais (nome de dificil leitura),Grupo M,Inglaterra,Croácia,1,2
+20,Joabe Mais (nome de dificil leitura),Grupo M,Gana,Panamá,1,2
+20,Joabe Mais (nome de dificil leitura),Grupo M,Inglaterra,Gana,3,1
+20,Joabe Mais (nome de dificil leitura),Grupo M,Panamá,Croácia,2,3
+20,Joabe Mais (nome de dificil leitura),Grupo M,Croácia,Gana,3,1
+20,Joabe Mais (nome de dificil leitura),Grupo M,Panamá,Inglaterra,0,2
