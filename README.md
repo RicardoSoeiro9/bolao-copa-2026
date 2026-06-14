@@ -50,16 +50,19 @@ cp .streamlit/secrets.toml.example .streamlit/secrets.toml
 
 ## Deploy no Streamlit Community Cloud
 
-1. Crie um repositório **novo** no GitHub e faça o push deste projeto:
-   ```bash
-   git remote add origin https://github.com/<seu-usuario>/<seu-repo>.git
-   git push -u origin master
-   ```
-2. Acesse <https://share.streamlit.io> e clique em **New app**.
-3. Selecione o repositório, branch `master` e arquivo `app.py`.
-4. Em **Advanced settings → Secrets**, adicione:
+O projeto já está publicado em
+<https://github.com/RicardoSoeiro9/bolao-copa-2026> (branch `main`). Para colocar o site
+no ar:
+
+1. Acesse <https://share.streamlit.io> e entre com a conta do GitHub.
+2. Clique em **Create app → Deploy a public app from GitHub**.
+3. Repository: `RicardoSoeiro9/bolao-copa-2026` · Branch: `main` · Main file: `app.py`.
+4. Em **Advanced settings → Secrets**, cole:
    ```toml
    FOOTBALL_DATA_API_KEY = "sua-chave-aqui"
    ```
-5. **Deploy**. O app fica público; os placares se atualizam sozinhos a cada 2 minutos
-   (limite do plano gratuito da API).
+   (a mesma chave que está em `.streamlit/secrets.toml` localmente).
+5. **Deploy**. Em ~1 min o site fica público numa URL `*.streamlit.app`, com os placares
+   se atualizando sozinhos a cada 2 minutos (limite do plano gratuito da API).
+
+Para enviar alterações futuras: `git push` — o Streamlit re-deploya automaticamente.
