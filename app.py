@@ -25,6 +25,7 @@ def _html(conteudo: str) -> None:
 
 
 VALOR_POR_PARTICIPANTE = 30
+VALOR_POR_PARTICIPANTE_MATA = 25
 PERC_PREMIOS = {1: 0.70, 2: 0.20, 3: 0.10}
 
 CSS = """
@@ -350,7 +351,7 @@ def _card_jogo(jogo: pd.Series) -> str:
     else:
         placar = "×"
 
-    info = jogo["grupo"] or ""
+    info = jogo.get("grupo") or jogo.get("fase") or ""
     if hora_txt:
         info = f"{info} · 🕒 {hora_txt}" if info else f"🕒 {hora_txt}"
     return f"""
@@ -515,6 +516,252 @@ def render_regras():
         st.info("Arquivo de regras não encontrado.")
 
 
+# ───────────────────────────── Mata-mata ─────────────────────────────
+
+def _alinhar_gabarito_api(gabarito: pd.DataFrame, api: pd.DataFrame) -> pd.DataFrame:
+    """Atribui a cada jogo numerado do gabarito o placar real da API.
+
+    Casa o gabarito com a API por fase: dentro de cada fase, ordena o gabarito por
+    número do jogo e a API por data, e pareia posicionalmente. Quando o gabarito já
+    traz as seleções (32-avos), tenta casar pelo par de times antes do posicional.
+    """
+    api = api.copy()
+    cols_reais = ["casa", "fora", "gols_casa", "gols_fora", "status", "data_utc", "minuto"]
+    linhas = []
+    for _, g in gabarito.sort_values("jogo").iterrows():
+        fase = g.get("fase")
+        candidatos = api[api["fase"] == fase] if "fase" in api.columns else api.iloc[0:0]
+
+        escolhido = None
+        casa_g, fora_g = g.get("casa"), g.get("fora")
+        if casa_g and fora_g and not candidatos.empty:
+            alvo = frozenset({_normalizar(str(casa_g)), _normalizar(str(fora_g))})
+            for idx, j in candidatos.iterrows():
+                if frozenset({_normalizar(j["casa"]), _normalizar(j["fora"])}) == alvo:
+                    escolhido = idx
+                    break
+        if escolhido is None and not candidatos.empty:
+            ordenados = candidatos.sort_values("data_utc", na_position="last")
+            disponiveis = [i for i in ordenados.index if i in api.index]
+            if disponiveis:
+                escolhido = disponiveis[0]
+
+        linha = g.to_dict()
+        if escolhido is not None:
+            j = api.loc[escolhido]
+            for col in cols_reais:
+                # Mantém casa/fora do gabarito quando ele já as define.
+                if col in ("casa", "fora") and g.get(col):
+                    continue
+                linha[col] = j.get(col)
+            api = api.drop(index=escolhido)  # cada jogo da API é consumido uma vez
+        else:
+            for col in cols_reais:
+                linha.setdefault(col, None)
+        linhas.append(linha)
+    return pd.DataFrame(linhas)
+
+
+def carregar_mata_reais(gabarito: pd.DataFrame) -> tuple[pd.DataFrame, str | None]:
+    """Jogos do mata-mata com placar real da API (fim da prorrogação).
+
+    Com gabarito preenchido, devolve uma linha por jogo numerado (alinhado à API).
+    Sem gabarito, devolve os jogos crus da API (jogo = NaN), só para exibição.
+    """
+    chave = dados_copa.obter_api_key()
+    if not chave:
+        return gabarito.copy(), (
+            "Sem chave da API football-data.org — os jogos do mata-mata não serão "
+            "carregados. Configure `FOOTBALL_DATA_API_KEY`."
+        )
+    try:
+        api = dados_copa.obter_jogos_mata(chave)
+    except requests.RequestException as exc:
+        return gabarito.copy(), f"Falha ao buscar o mata-mata na API ({exc})."
+
+    if api.empty:
+        return gabarito.copy(), "A API ainda não liberou os jogos do mata-mata."
+    if gabarito.empty:
+        return api, None
+    return _alinhar_gabarito_api(gabarito, api), None
+
+
+def render_ranking_mata(ranking: pd.DataFrame, premios: dict):
+    if ranking.empty:
+        st.info("Aguardando os palpites da galera para montar o ranking do mata-mata.")
+        return
+    render_podio(ranking, premios)
+
+    medalhas = {1: "🥇", 2: "🥈", 3: "🥉"}
+    classes = {1: "ouro", 2: "prata", 3: "bronze"}
+    linhas = []
+    for _, r in ranking.iterrows():
+        pos = int(r["posicao"])
+        cls = classes.get(pos, "")
+        marca = medalhas.get(pos, str(pos))
+        premio = (
+            f'<div class="rank-premio">R$ {premios[pos]:g}</div>' if pos in premios else ""
+        )
+        linhas.append(
+            f"""
+            <tr class="{cls}">
+                <td class="rank-pos">{marca}</td>
+                <td><span class="rank-nome">{r['participante']}</span>{premio}</td>
+                <td class="rank-total">{r['pontos']:g}</td>
+                <td class="num">{r['pontos_jogo']:g}</td>
+                <td class="num">{r['pontos_extra']:g}</td>
+                <td class="num">{int(r['exatos'])}</td>
+                <td class="num">{int(r['parciais'])}</td>
+            </tr>
+            """
+        )
+    _html(
+        '<table class="rank-tabela">'
+        '<tr><th class="num">#</th><th>Participante</th><th class="num">Pontos</th>'
+        '<th class="num">Jogos</th><th class="num">Pódio</th>'
+        '<th class="num">🎯 Exato</th><th class="num">➕ Parcial</th></tr>'
+        + "".join(linhas)
+        + "</table>"
+    )
+
+
+def render_jogos_mata(jogos: pd.DataFrame):
+    if jogos.empty or "casa" not in jogos.columns:
+        st.info("A API ainda não liberou os confrontos do mata-mata.")
+        return
+
+    jogos = jogos.copy()
+    jogos["dt_br"] = (
+        pd.to_datetime(jogos.get("data_utc"), utc=True, errors="coerce")
+        - pd.Timedelta(hours=3)
+    )
+    if "ordem_fase" not in jogos.columns:
+        jogos["ordem_fase"] = 99
+    jogos = jogos.sort_values(["ordem_fase", "dt_br"], na_position="last")
+
+    st.caption("Confrontos do mata-mata · placar considera o fim da prorrogação.")
+    for fase, do_fase in jogos.groupby("fase", sort=False):
+        _html(f'<div class="dia-titulo">🥊 {fase}</div>')
+        cards = [_card_jogo(j) for _, j in do_fase.iterrows()]
+        _html(f'<div class="jogos-grid">{"".join(cards)}</div>')
+
+
+_ROTULOS_PODIO_MATA = [
+    ("campeao", "Campeã", "campeao", bolao.PONTOS_MATA_CAMPEAO),
+    ("vice_campeao", "Vice-campeã", "vice", bolao.PONTOS_MATA_VICE),
+    ("terceiro_lugar", "3º lugar", "terceiro", bolao.PONTOS_MATA_TERCEIRO),
+    ("quarto_lugar", "4º lugar", "quarto", bolao.PONTOS_MATA_QUARTO),
+]
+
+
+def render_podio_mata(palpite: pd.Series, resultado: dict):
+    detalhe = bolao.pontuar_extras(palpite, resultado)
+    acertos = {
+        "campeao": detalhe["acerto_campeao"], "vice": detalhe["acerto_vice"],
+        "terceiro": detalhe["acerto_terceiro"], "quarto": detalhe["acerto_quarto"],
+    }
+    cards = []
+    for col_csv, rotulo, chave_res, pts in _ROTULOS_PODIO_MATA:
+        valor = palpite.get(col_csv) or "—"
+        acertou = acertos[chave_res]
+        ganho = f'<div class="ganho">+{pts} pts ✓</div>' if acertou else ""
+        cards.append(
+            f"""
+            <div class="final-card{' ok' if acertou else ''}">
+                <div class="rotulo">{rotulo}</div>
+                <div class="palpite">{bandeira_html(valor)} {valor}</div>
+                {ganho}
+            </div>
+            """
+        )
+    _html(f'<div class="final-grid">{"".join(cards)}</div>')
+    st.caption(f"Pontos de pódio: **{detalhe['pontos_extra']:g}**")
+
+
+def render_participante_mata(
+    avaliado: pd.DataFrame, ranking: pd.DataFrame, participantes: pd.DataFrame, resultado: dict
+):
+    if participantes.empty:
+        st.info("Aguardando a lista de participantes do mata-mata.")
+        return
+
+    nomes = list(participantes["nome"])
+    nome = st.selectbox("Participante", nomes, key="part_mata")
+    posicao = ranking.loc[ranking["participante"] == nome] if not ranking.empty else ranking
+
+    if not posicao.empty:
+        r = posicao.iloc[0]
+        c1, c2, c3, c4 = st.columns(4)
+        c1.metric("Posição", f"{int(r['posicao'])}º de {len(ranking)}")
+        c2.metric("Total", f"{r['pontos']:g}")
+        c3.metric("Pontos de jogo", f"{r['pontos_jogo']:g}")
+        c4.metric("Placares exatos", int(r["exatos"]))
+
+    palpite_podio = participantes.loc[participantes["nome"] == nome]
+    if not palpite_podio.empty:
+        st.markdown("#### 🏆 Palpites de pódio")
+        render_podio_mata(palpite_podio.iloc[0], resultado)
+
+    st.markdown("#### ⚔️ Palpites por jogo")
+    dados = avaliado[avaliado["participante"] == nome] if len(avaliado) else avaliado
+    if dados.empty:
+        st.info("Palpites de jogo deste participante ainda não foram carregados.")
+        return
+
+    tabela = dados.copy().sort_values("jogo", na_position="last")
+    linhas = []
+    for _, j in tabela.iterrows():
+        num = f"#{int(j['jogo'])}" if pd.notna(j.get("jogo")) else "—"
+        fase = j.get("fase") or ""
+        casa, fora = j.get("casa"), j.get("fora")
+        if casa and fora and pd.notna(casa) and pd.notna(fora):
+            jogo = (
+                f"{bandeira_html(casa)} {casa} "
+                f"<span style='color:#8fae9c'>×</span> {fora} {bandeira_html(fora)}"
+            )
+        else:
+            jogo = "<span style='color:#8fae9c'>a definir</span>"
+        pal = (
+            f"{j['palpite_casa']:.0f} × {j['palpite_fora']:.0f}"
+            if pd.notna(j["palpite_casa"]) and pd.notna(j["palpite_fora"]) else "—"
+        )
+        real = (
+            f"{j['gols_casa']:.0f} × {j['gols_fora']:.0f}"
+            if pd.notna(j.get("gols_casa")) and pd.notna(j.get("gols_fora")) else "—"
+        )
+        tipo = j.get("tipo", "pendente")
+        if tipo == "exato":
+            cls, rotulo = "exato", "🎯 3 pts"
+        elif tipo == "parcial":
+            cls, rotulo = "emp", f"➕ {int(j['pontos'])} pts"
+        elif tipo == "errou":
+            cls, rotulo = "errou", "❌ 0 pts"
+        else:
+            cls, rotulo = "pend", "⏳ Aguardando"
+        linhas.append(
+            f'<tr><td class="pg-data">{num} · {fase}</td>'
+            f'<td class="pg-jogo">{jogo}</td>'
+            f'<td class="c pg-pal">{pal}</td>'
+            f'<td class="c pg-real">{real}</td>'
+            f'<td class="c"><span class="pg-badge {cls}">{rotulo}</span></td>'
+            f'<td class="pg-pts">{j["pontos"]:g}</td></tr>'
+        )
+    _html(
+        '<table class="pg-tabela">'
+        '<tr><th>Jogo</th><th>Confronto</th><th class="c">Palpite</th><th class="c">Real</th>'
+        '<th class="c">Acerto</th><th class="c">Pts</th></tr>'
+        + "".join(linhas)
+        + "</table>"
+    )
+
+
+def render_mata_regras():
+    caminho = Path(__file__).parent / "regras_pontuacao_mata.md"
+    if caminho.exists():
+        with st.expander("📜 Regras do bolão do mata-mata"):
+            st.markdown(caminho.read_text(encoding="utf-8"))
+
+
 def main():
     st.set_page_config(page_title="Bolão Copa 2026", page_icon="🏆", layout="wide")
     st.markdown(CSS, unsafe_allow_html=True)
@@ -545,11 +792,18 @@ def main():
         )
         st.divider()
         st.caption(
-            "**Pontuação:** placar exato 10 · vencedor 5 · empate 7 · "
+            "**Fase de grupos** — placar exato 10 · vencedor 5 · empate 7 · "
             "campeão 30 · vice 20 · artilheiro 20 · 3º 10 · 4º 10.\n\n"
             "**Desempate:** placares exatos → campeão → artilheiro → grupo do Brasil.\n\n"
             f"**Premiação (R$ {premio_total}):** 1º R$ {premios[1]} · "
             f"2º R$ {premios[2]} · 3º R$ {premios[3]}."
+        )
+        st.divider()
+        st.caption(
+            "**🥊 Mata-mata** — por jogo (máx. 3): vencedor/empate +1 · gols do time A "
+            "+1 · gols do time B +1 (vale o fim da prorrogação, sem pênaltis).\n\n"
+            "**Pódio:** campeã 10 · vice 6 · 3º 4 · 4º 2.\n\n"
+            f"**Premiação:** R$ {VALOR_POR_PARTICIPANTE_MATA}/pessoa, dividida 70/20/10."
         )
 
     gabarito = bolao.carregar_jogos_gabarito()
@@ -575,8 +829,32 @@ def main():
     if ao_vivo:
         st.caption("⚠️ Há jogos em andamento — a pontuação inclui placares parciais.")
 
-    aba_ranking, aba_jogos, aba_grupos, aba_part, aba_regras = st.tabs(
-        ["🏆 Ranking", "⚽ Jogos", "📊 Grupos", "👤 Participante", "📜 Regras"]
+    # Dados do bolão do mata-mata (estrutura pronta; preenche quando a planilha chegar).
+    try:
+        participantes_mata = bolao.carregar_participantes_mata()
+        palpites_mata = bolao.carregar_palpites_mata()
+        gabarito_mata = bolao.carregar_jogos_mata()
+        jogos_mata, aviso_mata = carregar_mata_reais(gabarito_mata)
+        avaliado_mata = (
+            bolao.avaliar_palpites_mata(palpites_mata, jogos_mata)
+            if len(palpites_mata) else palpites_mata
+        )
+        premio_total_mata = VALOR_POR_PARTICIPANTE_MATA * len(participantes_mata)
+        premios_mata = {
+            pos: round(premio_total_mata * perc) for pos, perc in PERC_PREMIOS.items()
+        }
+        ranking_mata = bolao.montar_ranking_mata(
+            avaliado_mata, participantes_mata, resultado_final
+        )
+    except Exception as exc:  # mata-mata não pode derrubar as abas de grupos
+        participantes_mata = palpites_mata = gabarito_mata = None
+        jogos_mata = pd.DataFrame()
+        avaliado_mata = pd.DataFrame()
+        ranking_mata = pd.DataFrame()
+        aviso_mata = f"Não foi possível carregar os dados do mata-mata ({exc})."
+
+    aba_ranking, aba_jogos, aba_grupos, aba_part, aba_mata, aba_regras = st.tabs(
+        ["🏆 Ranking", "⚽ Jogos", "📊 Grupos", "👤 Participante", "🥊 Mata-mata", "📜 Regras"]
     )
     with aba_ranking:
         render_ranking(ranking, premios)
@@ -586,6 +864,23 @@ def main():
         render_grupos()
     with aba_part:
         render_participante(avaliado, ranking, participantes, resultado_final)
+    with aba_mata:
+        st.markdown("### 🥊 Bolão do Mata-mata")
+        if aviso_mata:
+            st.warning(aviso_mata)
+        if participantes_mata is not None:
+            sub_rank, sub_jogos, sub_part = st.tabs(
+                ["🏆 Ranking", "⚔️ Jogos", "👤 Participante"]
+            )
+            with sub_rank:
+                render_ranking_mata(ranking_mata, premios_mata)
+            with sub_jogos:
+                render_jogos_mata(jogos_mata)
+            with sub_part:
+                render_participante_mata(
+                    avaliado_mata, ranking_mata, participantes_mata, resultado_final
+                )
+        render_mata_regras()
     with aba_regras:
         render_regras()
 

@@ -201,9 +201,67 @@ def obter_classificacao(chave: str) -> pd.DataFrame:
     return pd.DataFrame(linhas)
 
 
+@st.cache_data(ttl=TTL_SEGUNDOS, show_spinner="Buscando jogos do mata-mata...")
+def obter_jogos_mata(chave: str) -> pd.DataFrame:
+    """Jogos do mata-mata com placar real (fim da prorrogação) e status, nomes em PT.
+
+    Inclui a coluna `fase` (rótulo PT) e `ordem_fase` (posição da fase na chave). O
+    placar é o do fim do tempo complementar, sem pênaltis — ver `_placar_fim_prorrogacao`.
+    """
+    estagios = ",".join(api for api, _ in ESTAGIOS_MATA)
+    dados = _requisitar(f"matches?stage={estagios}", chave)
+    jogos = []
+    for partida in dados.get("matches", []):
+        casa_api = partida["homeTeam"].get("name") or ""
+        fora_api = partida["awayTeam"].get("name") or ""
+        gols_casa, gols_fora = _placar_fim_prorrogacao(partida)
+        estagio = partida.get("stage") or ""
+        jogos.append(
+            {
+                "casa": nome_api_para_planilha(casa_api) or casa_api,
+                "fora": nome_api_para_planilha(fora_api) or fora_api,
+                "gols_casa": gols_casa,
+                "gols_fora": gols_fora,
+                "status": partida.get("status", "SCHEDULED"),
+                "data_utc": partida.get("utcDate"),
+                "fase": _ESTAGIO_PARA_FASE.get(estagio, estagio),
+                "ordem_fase": _ORDEM_ESTAGIO.get(estagio, 99),
+                "minuto": partida.get("minute"),
+            }
+        )
+    return pd.DataFrame(jogos)
+
+
 # Estágios de mata-mata como a football-data.org costuma nomear na competição WC.
 _ESTAGIO_FINAL = "FINAL"
 _ESTAGIO_TERCEIRO = "THIRD_PLACE"
+
+# Fases do mata-mata na ordem da chave, com o rótulo em PT exibido no app.
+# A Copa de 2026 tem 48 seleções, então a chave começa numa rodada de 32 (LAST_32),
+# nova na competição. As strings exatas devem ser confirmadas contra a API ao vivo.
+ESTAGIOS_MATA = [
+    ("LAST_32", "32-avos"),
+    ("LAST_16", "Oitavas"),
+    ("QUARTER_FINALS", "Quartas"),
+    ("SEMI_FINALS", "Semifinal"),
+    ("THIRD_PLACE", "Disputa 3º"),
+    ("FINAL", "Final"),
+]
+_ESTAGIO_PARA_FASE = {api: pt for api, pt in ESTAGIOS_MATA}
+# Ordem de cada estágio na chave, para ordenar os jogos cronologicamente por fase.
+_ORDEM_ESTAGIO = {api: i for i, (api, _) in enumerate(ESTAGIOS_MATA)}
+
+
+def _placar_fim_prorrogacao(partida: dict) -> tuple[int | None, int | None]:
+    """Placar ao fim do tempo complementar (prorrogação), EXCLUINDO os pênaltis.
+
+    No v4 da football-data.org, `score.fullTime` traz o resultado após a prorrogação
+    (os pênaltis ficam em `score.penalties` e só refletem em `score.winner`). Assim,
+    um jogo decidido nos pênaltis aparece aqui como empate — que é o que as regras do
+    bolão pedem.
+    """
+    placar = partida.get("score", {}).get("fullTime", {})
+    return placar.get("home"), placar.get("away")
 
 
 def _vencedor_perdedor(partida: dict) -> tuple[str | None, str | None]:
